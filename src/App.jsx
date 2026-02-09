@@ -315,7 +315,7 @@ function App() {
           <div className="about-container"><div className="about-content-wrapper reveal"><div className="about-text-content">{/* [ELLE DÜZENLE] BİZ KİMİZ? (beyaz çizgi CSS: .about-subtitle::after) */}
                 <span className="about-subtitle">Biz Kimiz?</span>
                 {/* [ELLE DÜZENLE] HAKKIMIZDA BAŞLIK (sarı çizgi CSS: .about-title) */}
-                <h2 className="about-title">Hakkımızda</h2><h3>Dijital dünyada sıradan olmayı reddediyoruz.</h3><p>2012’den bu yana; markaların dijitalde güçlü, hızlı ve etkileyici bir duruş sergilemesi için çalışıyoruz. Web tasarım ve dijital çözümlerimizde, yalnızca göze hitap eden değil, aynı zamanda sonuç üreten projeler geliştiriyoruz.
+                <h2 className="about-title">Hakkımızda</h2><h3>Dijital dünyada sıradan olmayı reddediyoruz.</h3><p>2020’den bu yana; markaların dijitalde güçlü, hızlı ve etkileyici bir duruş sergilemesi için çalışıyoruz. Web tasarım ve dijital çözümlerimizde, yalnızca göze hitap eden değil, aynı zamanda sonuç üreten projeler geliştiriyoruz.
 
 Kullanıcı deneyimi, performans ve modern tasarım anlayışıyla; markaları dijital dünyada bir adım öne taşıyoruz.</p></div><div className="about-gold-badge"><div className="gold-badge-header">
                 {/* [ELLE DÜZENLE] ROZET LOGOSU + MARKA YAZISI (navbar logosundan bağımsız) */}
