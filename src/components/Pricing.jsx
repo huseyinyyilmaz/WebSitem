@@ -180,9 +180,9 @@ export default function Pricing() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="subtitle">Fiyatlandirma</span>
-          <h2>Size Uygun Paketi Secin</h2>
-          <p>Ihtiyaciniza gore tasarlanmis esnek paketler. Ozel projeler icin ozel teklif alabilirsiniz.</p>
+          <span className="subtitle">Fiyatlandırma</span>
+          <h2>Size Uygun Paketi Seçin</h2>
+          <p>İhtiyacınıza göre tasarlanmış esnek paketler. Özel projeler için özel teklif alabilirsiniz.</p>
         </motion.div>
 
         <div className="pricing-grid">
@@ -251,7 +251,7 @@ export default function Pricing() {
           <div className="pricing-header additional-pricing-header">
             <span className="subtitle">Ek Hizmetler</span>
             <h2>Ek Hizmetlerimiz</h2>
-            <p>Paketinizi guclendirecek ek servislerimizi ihtiyaciniza gore secip birlikte planlayabiliriz.</p>
+            <p>Paketinizi güçlendirecek ek servislerimizi ihtiyacınıza göre seçip birlikte planlayabiliriz.</p>
           </div>
 
           <div className="additional-services-grid">

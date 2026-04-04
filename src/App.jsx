@@ -11,6 +11,7 @@ import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
 import Pricing from './components/Pricing';
 import Stats from './components/Stats';
+import ServiceDetails from './components/ServiceDetails';
 
 // --- [ AYARLAR ] ---
 // NOT: Mobilde arka plan geometrileri (particles) kasma yapmasın diye ayarları dinamik yöneteceğiz.
@@ -347,7 +348,13 @@ function App() {
             {/* [ELLE DÜZENLE] ÇEVRİM İÇİ ROZETİ (CSS: .online-badge-container, .online-dot) */}
             <div className="online-badge-container"><div className="online-dot"></div><span>Şu an Çevrimiçi</span></div>
             <h1>PROFESYONEL <br /><span className="outline-text">WEB TASARIM</span> <br />AJANSI</h1>
-            <p>Geleceği tahmin etmenin en iyi yolu, onu tasarlamaktır. TasarımKurdu olarak vizyonumuz; sadece işlevsel web siteleri yapmak değil, markanıza değer katan, yaşayan ve gelişen dijital ekosistemler kurmaktır. Biz bugünü değil, sonrasını düşünerek tasarlarız.</p>
+            <p>
+              Geleceği tahmin etmenin en iyi yolu, onu tasarlamaktır. TasarımKurdu olarak vizyonumuz; sadece işlevsel web siteleri yapmak değil, markanıza değer katan, yaşayan ve gelişen dijital ekosistemler kurmaktır. 
+              <br /><br />
+              <strong>İstanbul merkezli</strong> dijital ajansımızda, <strong>React, Python, Node.js</strong> gibi modern teknolojilerle <strong>%100 SEO uyumlu</strong>, hızlı ve güvenli web siteleri geliştiriyoruz. 2020’den beri <strong>500+ başarılı proje</strong>, <strong>250+ mutlu müşteri</strong> ve <strong>%98 müşteri memnuniyeti</strong> ile sektörde güvenilir bir iş ortağıyız.
+              <br /><br />
+              Kurumsal web tasarım, e-ticaret çözümleri, mobil uygulama geliştirme, Google Ads ve sosyal medya yönetimi ile markanızı dijital dünyada zirveye taşıyoruz. Biz bugünü değil, sonrasını düşünerek tasarım yaparız.
+            </p>
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="offer-btn main-size"><span className="btn-text">TEKLİF ALIN</span><div className="yellow-bg"></div></a>
           </div>
           <div className="hero-image reveal"><img src="https://cdni.iconscout.com/illustration/premium/thumb/web-development-3454628-2918517.png" alt="Profesyonel Web Tasarım ve Geliştirme Hizmetleri - Modern, Responsive ve SEO Uyumlu Web Siteleri" loading="eager" /></div>
@@ -356,7 +363,11 @@ function App() {
         <div className="scrolling-ticker"><div className="ticker-track">{[...marqueeItems, ...marqueeItems].map((item, index) => (<div className="ticker-item" key={index}><span className="ticker-dot">●</span>{item}</div>))}</div></div>
 
         <section id="services" className="services-section">
-          <div className="services-header reveal"><span className="subtitle">Kurumsal Çözümler</span><h2>Hizmetlerimiz</h2><p>Dijital dünyada iz bırakmak isteyen markalar için stratejik çözümler üretiyoruz.</p></div>
+          <div className="services-header reveal">
+            <span className="subtitle">Kurumsal Çözümler</span>
+            <h2>Hizmetlerimiz</h2>
+            <p>Dijital dünyada iz bırakmak isteyen markalar için stratejik çözümler üretiyoruz.</p>
+          </div>
           <div className="slider-container reveal" onMouseDown={onDragStart} onMouseMove={onDragMove} onMouseUp={onDragEnd} onMouseLeave={onDragEnd} onTouchStart={onDragStart} onTouchMove={onDragMove} onTouchEnd={onDragEnd}>
             <button className="slider-btn prev-btn" onClick={prevSlide}>‹</button>
             <div className="services-wrapper-window">
@@ -372,13 +383,31 @@ function App() {
           </div>
         </section>
 
+        <ServiceDetails />
+
         <section id="about" className="about-section">
           <div className="about-container"><div className="about-content-wrapper reveal"><div className="about-text-content">{/* [ELLE DÜZENLE] BİZ KİMİZ? (beyaz çizgi CSS: .about-subtitle::after) */}
                 <span className="about-subtitle">Biz Kimiz?</span>
                 {/* [ELLE DÜZENLE] HAKKIMIZDA BAŞLIK (sarı çizgi CSS: .about-title) */}
-                <h2 className="about-title">Hakkımızda</h2><h3>Dijital dünyada sıradan olmayı reddediyoruz.</h3><p>2020’den bu yana; markaların dijitalde güçlü, hızlı ve etkileyici bir duruş sergilemesi için çalışıyoruz. Web tasarım ve dijital çözümlerimizde, yalnızca göze hitap eden değil, aynı zamanda sonuç üreten projeler geliştiriyoruz.
-
-Kullanıcı deneyimi, performans ve modern tasarım anlayışıyla; markaları dijital dünyada bir adım öne taşıyoruz.</p></div><div className="about-gold-badge"><div className="gold-badge-header">
+                <h2 className="about-title">Hakkımızda</h2>
+                <h3>Dijital dünyada sıradan olmayı reddediyoruz.</h3>
+                <p>
+                  <strong>2020’den bu yana</strong> markaların dijitalde güçlü, hızlı ve etkileyici bir duruş sergilemesi için çalışıyoruz. Web tasarım ve dijital çözümlerimizde, yalnızca göze hitap eden değil, aynı zamanda <strong>sonuç üreten</strong> projeler geliştiriyoruz.
+                </p>
+                <p>
+                  <strong>Kullanıcı deneyimi (UX), performans ve modern tasarım anlayışıyla</strong>; markaları dijital dünyada bir adım öne taşıyoruz. <strong>Google Core Web Vitals</strong> standartlarına uygun, hızlı yüklenme süreleri ve mükemmel performans skorlarıyla arama motorlarında üst sıralarda yer almanizi sağlıyoruz.
+                </p>
+                <p>
+                  Ekibimiz <strong>React, Vue.js, Python, Node.js, Swift, Kotlin</strong> gibi modern teknolojilerde uzmanlaşmış yazılım geliştiriciler, UI/UX tasarımcılar, SEO uzmanları ve dijital pazarlama profesyonellerinden oluşuyor. Her proje için <strong>özel stratejiler</strong> geliştiriyor, sektör analizi yapıyor ve rakiplerinizin önüne geçmenizi sağlıyoruz.
+                </p>
+                <p>
+                  <strong>500+ başarılı proje</strong>, <strong>250+ mutlu müşteri</strong> ve <strong>%98 müşteri memnuniyeti</strong> oranlarıyla sektörde güvenilir bir iş ortağıyız. ISO 27001 bilgi güvenliği standartlarına uygun çalışıyor, müşteri verilerini en yüksek güvenlik seviyesinde koruyoruz.
+                </p>
+                <p>
+                  <strong>Misyonumuz:</strong> Markaları dijital dönüşümde lider konuma taşımak, teknoloji ve yaratıcılığı bir araya getirerek ölçülebilir sonuçlar üretmek.<br />
+                  <strong>Vizyonumuz:</strong> Türkiye’nin en güvenilir ve yenilikçi dijital ajansı olmak, global pazarda rekabet edebilir dijital çözümler sunmak.
+                </p>
+              </div><div className="about-gold-badge"><div className="gold-badge-header">
                 {/* [ELLE DÜZENLE] ROZET LOGOSU + MARKA YAZISI (navbar logosundan bağımsız) */}
                 <div className="gold-badge-left">
                   <img className="badge-logo-img" src="/tasarimkurdu-logo.png" alt="Tasarımkurdu Logo" />
@@ -392,12 +421,20 @@ Kullanıcı deneyimi, performans ve modern tasarım anlayışıyla; markaları d
         </section>
 
         <section id="how-it-works" className="how-it-works-section">
-          <div className="how-it-works-header reveal"><h2>Nasıl <span className="yellow-text">Çalışıyoruz?</span></h2><h3>Basit, hızlı ve etkili süreç.</h3></div>
-          <div className="how-it-works-container reveal"><div className="step-progress-bar"></div><div className="step-item"><div className="step-number">01</div><div className="icon-box"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div><h4>İletişim</h4><p>WhatsApp'tan bize ulaşın, ihtiyaçlarınızı dinleyelim.</p></div><div className="step-item"><div className="step-number">02</div><div className="icon-box"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3zM18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5zM2 2l7.586 7.586"/></svg></div><h4>Tasarım</h4><p>İşletmenize özel modern tasarım hazırlayalım.</p></div><div className="step-item"><div className="step-number">03</div><div className="icon-box"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h4>Geliştirme</h4><p>Hızlı ve optimize kodlama ile sitenizi geliştirelim.</p></div><div className="step-item"><div className="step-number">04</div><div className="icon-box"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h4>Yayın</h4><p>24 saat içinde siteniz canlıya alınsın!</p></div></div>
+          <div className="how-it-works-header reveal">
+            <h2>Nasıl <span className="yellow-text">Çalışıyoruz?</span></h2>
+            <h3>Basit, hızlı ve etkili süreç.</h3>
+            <p>4 adımda projenizi canlıya taşıyoruz. Şffaf iletişim, hızlı teslimat ve kusursuz kalite garantisi.</p>
+          </div>
+          <div className="how-it-works-container reveal"><div className="step-progress-bar"></div><div className="step-item"><div className="step-number">01</div><div className="icon-box"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div><h4>İletişim & Analiz</h4><p>WhatsApp'tan bize ulaşın, ihtiyaçlarınızı detaylı dinleyelim. Sektör analizi, rakip araştırması ve hedef kitle belirleme ile projenizin temelini oluşturuyoruz. <strong>Süre: 1-2 gün</strong></p></div><div className="step-item"><div className="step-number">02</div><div className="icon-box"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3zM18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5zM2 2l7.586 7.586"/></svg></div><h4>Tasarım & Prototip</h4><p>İşletmenize özel modern tasarım hazırlayalım. Figma üzerinde wireframe, mockup ve interaktif prototip geliştiriyoruz. Renk paleti, tipografi, kullanıcı akışını onayınıza sunuyoruz. <strong>Süre: 3-5 gün</strong></p></div><div className="step-item"><div className="step-number">03</div><div className="icon-box"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h4>Geliştirme & Test</h4><p>Hızlı ve optimize kodlama ile sitenizi geliştirelim. React, Python, Node.js ile modern altyapı, mobil uyumluluk, SEO optimizasyonu ve güvenlik testleri yapıyoruz. Sürekli önizleme ile ilerlemeyi takip edebilirsiniz. <strong>Süre: 5-10 gün</strong></p></div><div className="step-item"><div className="step-number">04</div><div className="icon-box"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h4>Yayın & Destek</h4><p>24 saat içinde siteniz canlıya alınsın! Domain, hosting, SSL sertifikası, Google Analytics ve Search Console entegrasyonlarıyla hizmete sunuyoruz. 1 yıl ücretsiz teknik destek dahil. <strong>Süre: 1 gün</strong></p></div></div>
         </section>
 
         <section id="philosophy" className="philosophy-section">
-          <div className="philosophy-header reveal"><span className="subtitle">Değerlerimiz</span><h2>Marka Felsefesi</h2><p>Sadece kod yazmıyoruz, markanıza ruh katıyoruz.</p></div>
+          <div className="philosophy-header reveal">
+            <span className="subtitle">Değerlerimiz</span>
+            <h2>Marka Felsefesi</h2>
+            <p>Sadece kod yazmıyoruz, markanıza ruh katıyoruz.</p>
+          </div>
           <div className="philosophy-container reveal">
             {philosophyData.map((item, index) => (
               <div key={index} className="philosophy-item-wrapper">
@@ -424,8 +461,7 @@ Kullanıcı deneyimi, performans ve modern tasarım anlayışıyla; markaları d
               <Logo isMobile={isMobile} />
             </div>
             <p className="footer-desc">
-              Dijital dünyada iz bırakmak isteyen markalar için stratejik çözümler üretiyoruz. 
-              Modern web tasarım ve dijital pazarlama hizmetleriyle markanızı zirveye taşıyoruz.
+              Dijital dünyada iz bırakmak isteyen markalar için stratejik çözümler üretiyoruz. Modern web tasarım ve dijital pazarlama hizmetleriyle markanızı zirveye taşıyoruz.
             </p>
             <div className="footer-social">
               <a href={instagramLink} target="_blank" rel="noopener noreferrer" aria-label="Instagram">

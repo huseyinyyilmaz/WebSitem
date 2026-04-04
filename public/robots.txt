@@ -1,29 +1,6 @@
-# robots.txt for Tasarım Kurdu
-# https://www.tasarimkurdu.com/
-
-User-agent: *
+﻿User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /private/
-Disallow: /*.json$
 
-# Sitemap
 Sitemap: https://www.tasarimkurdu.com/sitemap.xml
-
-# Crawl-delay
-Crawl-delay: 10
-
-# Google Bots
-User-agent: Googlebot
-Allow: /
-
-User-agent: Googlebot-Image
-Allow: /
-
-# Bing Bot
-User-agent: Bingbot
-Allow: /
-
-# Yandex
-User-agent: Yandex
-Allow: /
