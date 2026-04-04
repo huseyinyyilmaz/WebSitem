@@ -88,13 +88,48 @@ function App() {
   const slidesPerView = isMobile ? 1 : 3;
 
   const servicesOriginal = [
-    { id: "01", title: "Web Geliştirme", desc: "Modern teknolojiler (React, Python) kullanarak; hızlı, %100 SEO uyumlu, mobil dostu ve dönüşüm odaklı kurumsal web siteleri inşa ediyoruz.", icon: <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/> },
-    { id: "02", title: "Mobil Uygulama", desc: "iOS ve Android platformlarında sorunsuz çalışan, kullanıcı deneyimi (UX) yüksek, performanslı native ve hibrit mobil uygulamalar geliştiriyoruz.", icon: <path d="M12 2a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h4zM10 17h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/> },
-    { id: "03", title: "UI/UX Tasarım", desc: "Kullanıcı alışkanlıklarını analiz ederek, markanızın kimliğini yansıtan, estetik ve kullanımı kolay arayüz tasarımları hazırlıyoruz.", icon: <path d="M12 19l7-7 3 3-7 7-3-3zM18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5zM2 2l7.586 7.586" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/> },
-    { id: "04", title: "Dijital Pazarlama", desc: "Sosyal medya yönetimi, içerik stratejisi ve veri odaklı kampanyalarla markanızın dijital dünyadaki görünürlüğünü ve etkileşimini artırıyoruz.", icon: <path d="M2 20h20M5 20V10M10 20V4M15 20v8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/> },
-    { id: "05", title: "E-Ticaret Çözümleri", desc: "Güvenli ödeme altyapısı, kolay yönetim paneli ve satış artırıcı özelliklerle donatılmış, 7/24 kazandıran e-ticaret mağazaları kuruyoruz.", icon: <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/> },
-    { id: "06", title: "Yapay Zeka & Veri", desc: "İş süreçlerinizi hızlandıran yapay zeka destekli otomasyonlar, veri analizi sistemleri ve özel bot yazılımları üretiyoruz.", icon: <path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zM4.93 19.07a10 10 0 0 1 1.65-10.85 2 2 0 0 1 3.24 2.63 6 6 0 0 0-.6 7.69 2 2 0 0 1-2.63 3.24 10 10 0 0 1-1.66-2.71z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/> },
-    { id: "07", title: "Google Ads Reklamları", desc: "Hedef kitlenize nokta atışı ulaşmanızı sağlayan optimizasyonlu Google reklamlarıyla, bütçenizi en verimli şekilde kullanmanızı sağlıyoruz.", icon: <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/> }
+    { 
+      id: "01", 
+      title: "Web Geliştirme", 
+      desc: "Modern teknolojiler (React, Vue.js, Python, Node.js) kullanarak %100 SEO uyumlu, mobil responsive ve kullanıcı dostu kurumsal web siteleri geliştiriyoruz. Google Core Web Vitals standartlarına uygun, hızlı yükleme süreleri ve mükemmel performans skorlarıyla arama motorlarında üst sıralarda yer almanızı sağlıyoruz. SSL sertifikası, güvenlik duvarı ve düzenli yedekleme sistemiyle sitenizin güvenliğini garanti ediyoruz. WordPress, özel CMS ya da sıfırdan kod yazımı - ihtiyacınıza uygun çözümler sunuyoruz.", 
+      icon: <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/> 
+    },
+    { 
+      id: "02", 
+      title: "Mobil Uygulama Geliştirme", 
+      desc: "iOS (Swift) ve Android (Kotlin, Java) platformlarında native mobil uygulama geliştirme hizmeti sunuyoruz. React Native ve Flutter ile cross-platform çözümler sayesinde tek geliştirme süreciyle her iki platformda da mükemmel performans elde ediyoruz. Push notification, çevrimdışı çalışma, konum servisleri, kamera entegrasyonu, ödeme sistemleri ve sosyal medya entegrasyonları dahil tüm özellikleri sağlıyoruz. App Store ve Google Play Store yayınlama süreçlerinde tam destek veriyoruz.", 
+      icon: <path d="M12 2a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h4zM10 17h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/> 
+    },
+    { 
+      id: "03", 
+      title: "UI/UX Tasarım", 
+      desc: "Kullanıcı deneyimi (UX) araştırması ve kullanıcı arayüzü (UI) tasarımı konusunda uzman ekibimizle, markanızın dijital kimliğini yansıtan, estetik ve kullanımı kolay tasarımlar üretiyoruz. Wireframe, mockup ve prototip aşamalarıyla kullanıcı testleri yaparak, en yüksek dönüşüm oranlarını hedefliyoruz. Figma, Adobe XD, Sketch gibi profesyonel araçlarla çalışıyoruz. Web sitesi, mobil uygulama, dashboard ve SaaS ürünleri için özel UI/UX tasarımları hazırlıyoruz. Renk psikolojisi, tipografi ve accessibility standartlarına tam uyumluluk sağlıyoruz.", 
+      icon: <path d="M12 19l7-7 3 3-7 7-3-3zM18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5zM2 2l7.586 7.586" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/> 
+    },
+    { 
+      id: "04", 
+      title: "Dijital Pazarlama & Sosyal Medya", 
+      desc: "Facebook, Instagram, LinkedIn, Twitter ve TikTok'ta profesyonel sosyal medya yönetimi hizmeti sunuyoruz. İçerik stratejisi, grafik tasarım, video prodüksiyon, influencer iş birlikleri ve community management ile markanızın dijital varlığını güçlendiriyoruz. Google Analytics, Meta Business Suite ve benzeri araçlarla veri odaklı kampanya optimizasyonu yapıyoruz. Email marketing, SEO (arama motoru optimizasyonu), content marketing ve brand awareness çalışmalarıyla organik erişiminizi artırıyor, hedef kitlenizle güçlü bağlar kuruyoruz. Aylık raporlama ve strateji güncellemeleri sağlıyoruz.", 
+      icon: <path d="M2 20h20M5 20V10M10 20V4M15 20v8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/> 
+    },
+    { 
+      id: "05", 
+      title: "E-Ticaret Çözümleri", 
+      desc: "Ticimax, IdaSoft, Shopify, WooCommerce ve özel e-ticaret altyapılarıyla güvenli, hızlı ve karlı online mağazalar kuruyoruz. Ürün yönetimi, stok takibi, kargo entegrasyonu (Yurtiçi, MNG, Aras, UPS vb.), sanal POS entegrasyonu (tüm bankalar), fatura ve muhasebe sistemleri dahil tüm e-ticaret süreçlerinizi yönetiyoruz. N11, Trendyol, Hepsiburada gibi pazaryeri entegrasyonları, WhatsApp sipariş sistemi, canlı destek, indirim kuponları ve sadakat programları ile satışlarınızı katla. Mobil uyumlu, hızlı checkout ve güvenli ödeme altyapısıyla müşteri memnuniyetini maksimize ediyoruz.", 
+      icon: <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/> 
+    },
+    { 
+      id: "06", 
+      title: "Yapay Zeka & Otomasyon", 
+      desc: "ChatGPT API entegrasyonu, özel AI chatbot geliştirme, makine öğrenmesi modelleri ve veri analiz sistemleriyle iş süreçlerinizi otomatikleştiriyoruz. Python, TensorFlow, PyTorch kullanarak özel yapay zeka çözümleri üretiyoruz. Müşteri hizmetleri botu, satış asistanı, veri scraping, sentiment analizi, görüntü işleme ve doğal dil işleme (NLP) projeleri gerçekleştiriyoruz. RPA (Robotic Process Automation) ile tekrarlayan işlerinizi otomasyona alıyor, iş gücü maliyetlerinizi düşürüp verimliliğinizi artırıyoruz. API entegrasyonları ve webhook sistemleriyle farklı platformları birbirine bağlıyoruz.", 
+      icon: <path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zM4.93 19.07a10 10 0 0 1 1.65-10.85 2 2 0 0 1 3.24 2.63 6 6 0 0 0-.6 7.69 2 2 0 0 1-2.63 3.24 10 10 0 0 1-1.66-2.71z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/> 
+    },
+    { 
+      id: "07", 
+      title: "Google Ads & Reklamcılık", 
+      desc: "Google Ads (eski adıyla AdWords), Google Shopping, Display Network ve YouTube reklamlarıyla hedef kitlenize ulaşmanızı sağlıyoruz. Anahtar kelime araştırması, rakip analizi, reklam metni optimizasyonu, landing page tasarımı ve sürekli A/B testleriyle ROAS (reklam yatırım getirisi) oranınızı maksimize ediyoruz. Google Analytics 4 ve Google Tag Manager kurulumu, remarketing kampanyaları, conversion tracking ve detaylı performans raporlaması sunuyoruz. Facebook Ads, Instagram Ads ve LinkedIn Ads yönetimi ile tüm dijital reklam kanallarınızı optimize ediyoruz. Sertifikalı Google Partners ekibimizle bütçenizi en verimli şekilde yönetiyoruz.", 
+      icon: <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/> 
+    }
   ];
 
   const services = [...servicesOriginal, ...servicesOriginal, ...servicesOriginal];
@@ -315,7 +350,7 @@ function App() {
             <p>Geleceği tahmin etmenin en iyi yolu, onu tasarlamaktır. TasarımKurdu olarak vizyonumuz; sadece işlevsel web siteleri yapmak değil, markanıza değer katan, yaşayan ve gelişen dijital ekosistemler kurmaktır. Biz bugünü değil, sonrasını düşünerek tasarlarız.</p>
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="offer-btn main-size"><span className="btn-text">TEKLİF ALIN</span><div className="yellow-bg"></div></a>
           </div>
-          <div className="hero-image reveal"><img src="https://cdni.iconscout.com/illustration/premium/thumb/web-development-3454628-2918517.png" alt="Web Tasarım" /></div>
+          <div className="hero-image reveal"><img src="https://cdni.iconscout.com/illustration/premium/thumb/web-development-3454628-2918517.png" alt="Profesyonel Web Tasarım ve Geliştirme Hizmetleri - Modern, Responsive ve SEO Uyumlu Web Siteleri" loading="eager" /></div>
         </header>
 
         <div className="scrolling-ticker"><div className="ticker-track">{[...marqueeItems, ...marqueeItems].map((item, index) => (<div className="ticker-item" key={index}><span className="ticker-dot">●</span>{item}</div>))}</div></div>

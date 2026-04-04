@@ -1,9 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
   <url>
     <loc>https://www.tasarimkurdu.com/</loc>
-    <lastmod>2026-02-15</lastmod>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.tasarimkurdu.com/paylasim-gorseli.png</image:loc>
+      <image:title>Tasarım Kurdu - Web Tasarım Ajansı</image:title>
+    </image:image>
   </url>
+
+  <!-- Hizmetler Section -->
+  <url>
+    <loc>https://www.tasarimkurdu.com/#services</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Hakkımızda Section -->
+  <url>
+    <loc>https://www.tasarimkurdu.com/#about</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Projelerimiz Section -->
+  <url>
+    <loc>https://www.tasarimkurdu.com/#portfolio</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Fiyatlar Section -->
+  <url>
+    <loc>https://www.tasarimkurdu.com/#pricing</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Müşteri Yorumları Section -->
+  <url>
+    <loc>https://www.tasarimkurdu.com/#testimonials</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- S.S.S Section -->
+  <url>
+    <loc>https://www.tasarimkurdu.com/#faq</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- İletişim Section -->
+  <url>
+    <loc>https://www.tasarimkurdu.com/#contact</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
