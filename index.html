@@ -348,6 +348,36 @@
     <meta property="product:price:currency" content="TRY" />
     <meta property="product:availability" content="in stock" />
 
+    <!-- Product Schema for Pricing -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Profesyonel Web Tasarım Paketleri",
+      "description": "Başlangıç, Profesyonel ve E-Ticaret web tasarım paketleri. SEO uyumlu, mobil responsive, hızlı ve güvenli web siteleri.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Tasarım Kurdu"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "9999",
+        "highPrice": "35000",
+        "priceCurrency": "TRY",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "Tasarım Kurdu"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "250"
+      }
+    }
+    </script>
+
     <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

@@ -5,6 +5,26 @@ import react from '@vitejs/plugin-react'
 export default defineConfig(() => ({
   base: '/',
   plugins: [react()],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom'],
+          'animation': ['framer-motion'],
+          'icons': ['lucide-react']
+        }
+      }
+    },
+    cssCodeSplit: true,
+    chunkSizeWarningLimit: 600,
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true
+      }
+    }
+  },
   server: {
     host: true,
     port: 5173,

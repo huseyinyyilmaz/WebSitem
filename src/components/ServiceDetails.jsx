@@ -248,19 +248,19 @@ export default function ServiceDetails() {
           transition={{ duration: 0.6 }}
         >
           <span className="subtitle">Detaylı Hizmet Rehberi</span>
-          <h2>Satışını Yaptığımız Hizmetler Hakkında Detaylı Açıklamalar</h2>
+          <h2 id="service-details-heading">Satışını Yaptığımız Hizmetler Hakkında Detaylı Açıklamalar</h2>
           <p>
             Aşağıda sunduğumuz tüm hizmetleri kapsam, süreç ve beklenen kazanım başlıklarıyla detaylandırdık.
             Bu bölüm hem doğru karar vermenize yardımcı olur hem de arama motorlarında içerik derinliği sağlar.
           </p>
         </motion.div>
 
-        <div className="service-details-carousel-container">
-          <button className="service-details-carousel-btn prev-btn" onClick={prevSlide} aria-label="Onceki" disabled={!hasMultipleDetailSlides}>
+        <div className="service-details-carousel-container" role="region" aria-labelledby="service-details-heading" aria-label="Hizmet detayları carousel">
+          <button className="service-details-carousel-btn prev-btn" onClick={prevSlide} aria-label="Önceki Hizmet Detayı" disabled={!hasMultipleDetailSlides}>
             ‹
           </button>
           
-          <div className="service-details-carousel-track">
+          <div className="service-details-carousel-track" aria-live="polite" aria-atomic="true">
             <div 
               key={`detail-${currentSlide}-${slidesToShow}`}
               className="service-details-carousel-content carousel-animating" 
@@ -309,7 +309,7 @@ export default function ServiceDetails() {
             </div>
           </div>
 
-          <button className="service-details-carousel-btn next-btn" onClick={nextSlide} aria-label="Sonraki" disabled={!hasMultipleDetailSlides}>
+          <button className="service-details-carousel-btn next-btn" onClick={nextSlide} aria-label="Sonraki Hizmet Detayı" disabled={!hasMultipleDetailSlides}>
             ›
           </button>
         </div>

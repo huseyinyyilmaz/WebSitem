@@ -18,64 +18,64 @@ export default function Pricing() {
 
   const plans = [
     {
-      name: 'Baslangic',
+      name: 'Başlangıç',
       price: '9.999',
-      period: 'Baslangic Paketi',
-      description: 'Kucuk isletmeler ve girisimciler icin ideal',
+      period: 'Başlangıç Paketi',
+      description: 'Küçük işletmeler ve girişimciler için ideal',
       features: [
-        'Responsive Tasarim (5 Sayfa)',
+        'Responsive Tasarım (5 Sayfa)',
         'Temel SEO Optimizasyonu',
-        'Iletisim Formu',
+        'İletişim Formu',
         'Google Maps Entegrasyonu',
-        'Sosyal Medya Baglantilari',
-        '3 Ay Ucretsiz Destek',
+        'Sosyal Medya Bağlantıları',
+        '3 Ay Ücretsiz Destek',
         'Mobil Uyumlu',
-        'Hizli Yukleme'
+        'Hızlı Yükleme'
       ],
       highlight: false,
-      cta: 'Hemen Basla',
+      cta: 'Hemen Başla',
       showPrice: true
     },
     {
       name: 'Profesyonel',
       price: '21.999',
       period: 'Profesyonel Paket',
-      description: 'Buyuyen isletmeler icin ozel cozumler',
+      description: 'Büyüyen işletmeler için özel çözümler',
       features: [
-        'Responsive Tasarim (10 Sayfa)',
-        'Ileri Seviye SEO',
-        'Blog Modulu',
+        'Responsive Tasarım (10 Sayfa)',
+        'İleri Seviye SEO',
+        'Blog Modülü',
         'E-Posta Newsletter',
         'Analytics ve Raporlama',
-        '6 Ay Ucretsiz Destek',
+        '6 Ay Ücretsiz Destek',
         'Admin Paneli',
-        'Ozel Animasyonlar',
-        'Coklu Dil Destegi',
-        'Canli Chat Entegrasyonu'
+        'Özel Animasyonlar',
+        'Çoklu Dil Desteği',
+        'Canlı Chat Entegrasyonu'
       ],
       highlight: true,
-      badge: 'Populer',
+      badge: 'Popüler',
       cta: 'Hemen Al',
       showPrice: true
     },
     {
       name: 'E-Ticaret',
-      price: 'Teklif Alin',
-      period: 'Ozel Fiyatlandirma',
-      description: 'Online satis yapan markalar icin',
+      price: 'Teklif Alın',
+      period: 'Özel Fiyatlandırma',
+      description: 'Online satış yapan markalar için',
       features: [
         'E-Ticaret Platformu',
-        'Sinirsiz Urun',
-        'Odeme Sistemi Entegrasyonu',
+        'Sınırsız Ürün',
+        'Ödeme Sistemi Entegrasyonu',
         'Kargo Entegrasyonu',
-        'Stok Yonetimi',
-        'Musteri Paneli',
-        '1 Yil Ucretsiz Destek',
-        'Siparis Takibi',
-        'Kampanya ve Indirim Sistemi',
-        'Fatura ve E-Arsiv',
-        'Toplu SMS/Mail Gonderimi',
-        'Urun Yorumlari'
+        'Stok Yönetimi',
+        'Müşteri Paneli',
+        '1 Yıl Ücretsiz Destek',
+        'Sipariş Takibi',
+        'Kampanya ve İndirim Sistemi',
+        'Fatura ve E-Arşiv',
+        'Toplu SMS/Mail Gönderimi',
+        'Ürün Yorumları'
       ],
       highlight: false,
       cta: 'Teklif Al',
@@ -85,12 +85,12 @@ export default function Pricing() {
 
   const additionalServices = [
     {
-      name: 'Logo Tasarimi',
+      name: 'Logo Tasarımı',
       price: '2.500',
       isMonthly: false,
-      description: 'Markanizin karakterini yansitan, dijital ve baski kullanimina uygun profesyonel logo tasarimi.',
+      description: 'Markanızın karakterini yansıtan, dijital ve baskı kullanımına uygun profesyonel logo tasarımı.',
       details: [
-        '3 farkli konsept ve 2 revize turu',
+        '3 farklı konsept ve 2 revize turu',
         'Renkli, siyah ve beyaz varyasyonlar',
         'PNG, SVG, PDF ve kaynak dosya teslimi'
       ],
@@ -104,11 +104,11 @@ export default function Pricing() {
       name: 'SEO Paketi',
       price: '3.999',
       isMonthly: true,
-      description: 'Arama motorlarinda gorunurlugu artiran teknik ve icerik odakli aylik SEO yonetimi.',
+      description: 'Arama motorlarında görünürlüğü artıran teknik ve içerik odaklı aylık SEO yönetimi.',
       details: [
         'Anahtar kelime analizi ve rakip takibi',
-        'Teknik SEO iyilestirmeleri (hiz, meta, yapi)',
-        'Aylik performans raporu ve aksiyon plani'
+        'Teknik SEO iyileştirmeleri (hız, meta, yapı)',
+        'Aylık performans raporu ve aksiyon planı'
       ],
       icon: (
         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -121,11 +121,11 @@ export default function Pricing() {
       name: 'Google Ads',
       price: '4.500',
       isMonthly: true,
-      description: 'Butcenizi verimli kullanan, donusum odakli Google Ads kampanya kurulumu ve optimizasyonu.',
+      description: 'Bütçenizi verimli kullanan, dönüşüm odaklı Google Ads kampanya kurulumu ve optimizasyonu.',
       details: [
-        'Arama, goruntulu ve yeniden pazarlama kampanyalari',
-        'Hedef kitle, teklif ve butce optimizasyonu',
-        'Haftalik takip ve aylik donusum raporlamasi'
+        'Arama, görüntülü ve yeniden pazarlama kampanyaları',
+        'Hedef kitle, teklif ve bütçe optimizasyonu',
+        'Haftalık takip ve aylık dönüşüm raporlaması'
       ],
       icon: (
         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -134,14 +134,14 @@ export default function Pricing() {
       )
     },
     {
-      name: 'Sosyal Medya Yonetimi',
+      name: 'Sosyal Medya Yönetimi',
       price: '5.999',
       isMonthly: true,
-      description: 'Marka dilinize uygun planli icerik uretimi ve hesap yonetimi ile duzenli sosyal medya buyumesi.',
+      description: 'Marka dilinize uygun planlı içerik üretimi ve hesap yönetimi ile düzenli sosyal medya büyümesi.',
       details: [
-        'Aylik icerik takvimi ve post tasarimlari',
-        'Metin yazimi, hashtag stratejisi ve paylasim plani',
-        'Erisim, etkilesim ve buyume raporlamasi'
+        'Aylık içerik takvimi ve post tasarımları',
+        'Metin yazımı, hashtag stratejisi ve paylaşım planı',
+        'Erişim, etkileşim ve büyüme raporlaması'
       ],
       icon: (
         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -154,11 +154,11 @@ export default function Pricing() {
       name: 'Mobil Uygulama',
       price: '35.000',
       isMonthly: false,
-      description: 'Is modelinize ozel kullanici dostu mobil uygulama gelistirme (iOS ve Android).',
+      description: 'İş modelinize özel kullanıcı dostu mobil uygulama geliştirme (iOS ve Android).',
       details: [
-        'UI/UX tasarimi ve prototip sureci',
-        'API entegrasyonu ve temel admin panel baglantisi',
-        'Test, yayinlama ve lansman destegi'
+        'UI/UX tasarımı ve prototip süreci',
+        'API entegrasyonu ve temel admin panel bağlantısı',
+        'Test, yayınlama ve lansman desteği'
       ],
       icon: (
         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -168,14 +168,14 @@ export default function Pricing() {
       )
     },
     {
-      name: 'Bakim ve Destek',
+      name: 'Bakım ve Destek',
       price: '1.500',
       isMonthly: true,
-      description: 'Sitenizin guvenli, guncel ve hizli kalmasi icin duzenli teknik bakim ve destek hizmeti.',
+      description: 'Sitenizin güvenli, güncel ve hızlı kalması için düzenli teknik bakım ve destek hizmeti.',
       details: [
-        'Guvenlik guncellemeleri ve yedekleme',
-        'Hata duzeltme ve kucuk icerik guncellemeleri',
-        'Performans kontrolu ve aylik bakim raporu'
+        'Güvenlik güncellemeleri ve yedekleme',
+        'Hata düzeltme ve küçük içerik güncellemeleri',
+        'Performans kontrolü ve aylık bakım raporu'
       ],
       icon: (
         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -216,7 +216,7 @@ export default function Pricing() {
           transition={{ duration: 0.6 }}
         >
           <span className="subtitle">Fiyatlandırma</span>
-          <h2>Size Uygun Paketi Seçin</h2>
+          <h2 id="pricing-heading">Size Uygun Paketi Seçin</h2>
           <p>İhtiyacınıza göre tasarlanmış esnek paketler. Özel projeler için özel teklif alabilirsiniz.</p>
         </motion.div>
 
@@ -285,21 +285,21 @@ export default function Pricing() {
         >
           <div className="pricing-header additional-pricing-header">
             <span className="subtitle">Ek Hizmetler</span>
-            <h2>Ek Hizmetlerimiz</h2>
+            <h2 id="additional-services-heading">Ek Hizmetlerimiz</h2>
             <p>Paketinizi güçlendirecek ek servislerimizi ihtiyacınıza göre seçip birlikte planlayabiliriz.</p>
           </div>
 
-          <div className="additional-carousel-container">
+          <div className="additional-carousel-container" role="region" aria-labelledby="additional-services-heading" aria-label="Ek hizmetler carousel">
             <button 
               className="additional-carousel-btn prev-btn" 
               onClick={prevAdditionalSlide}
-              aria-label="Onceki"
+              aria-label="Önceki Ek Hizmet"
               disabled={!hasMultipleAdditionalSlides}
             >
               ‹
             </button>
             
-            <div className="additional-carousel-track">
+            <div className="additional-carousel-track" aria-live="polite" aria-atomic="true">
               <div 
                 key={`additional-${currentSlide}-${slidesToShow}`}
                 className="additional-carousel-content carousel-animating"
@@ -337,7 +337,7 @@ export default function Pricing() {
             <button 
               className="additional-carousel-btn next-btn" 
               onClick={nextAdditionalSlide}
-              aria-label="Sonraki"
+              aria-label="Sonraki Ek Hizmet"
               disabled={!hasMultipleAdditionalSlides}
             >
               ›
@@ -354,8 +354,8 @@ export default function Pricing() {
         >
           <div className="note-icon">*</div>
           <div>
-            <h4>Ozel Proje mi?</h4>
-            <p>Yukaridaki paketler standart cozumlerimizdir. Ozel ihtiyaclariniz icin <a href="https://wa.me/+905541460813" target="_blank" rel="noopener">bizimle iletisime gecin</a> ve size ozel teklif alalim.</p>
+            <h4>Özel Proje mi?</h4>
+            <p>Yukarıdaki paketler standart çözümlerimizdir. Özel ihtiyaçlarınız için <a href="https://wa.me/+905541460813" target="_blank" rel="noopener">bizimle iletişime geçin</a> ve size özel teklif alalım.</p>
           </div>
         </motion.div>
       </div>

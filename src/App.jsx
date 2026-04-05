@@ -370,7 +370,7 @@ function App() {
           <div className="hero-text reveal">
             {/* [ELLE DÜZENLE] ÇEVRİM İÇİ ROZETİ (CSS: .online-badge-container, .online-dot) */}
             <div className="online-badge-container"><div className="online-dot"></div><span>Şu an Çevrimiçi</span></div>
-            <h1>PROFESYONEL <br /><span className="outline-text">WEB TASARIM</span> <br />AJANSI</h1>
+            <h1>Profesyonel Web Tasarım Ajansı İstanbul | <br /><span className="outline-text">E-Ticaret & Mobil Uygulama</span> <br />Tasarım Kurdu</h1>
             <p>
               Geleceği tahmin etmenin en iyi yolu, onu tasarlamaktır. TasarımKurdu olarak vizyonumuz; sadece işlevsel web siteleri yapmak değil, markanıza değer katan, yaşayan ve gelişen dijital ekosistemler kurmaktır. 
               <br /><br />
@@ -385,20 +385,20 @@ function App() {
 
         <div className="scrolling-ticker"><div className="ticker-track">{[...marqueeItems, ...marqueeItems].map((item, index) => (<div className="ticker-item" key={index}><span className="ticker-dot">●</span>{item}</div>))}</div></div>
 
-        <section id="services" className="services-section">
+        <section id="services" className="services-section" aria-labelledby="services-heading">
           <div className="services-header reveal">
-            <span className="subtitle">Kurumsal Çözümler</span>
-            <h2>Hizmetlerimiz</h2>
+            <span className="subtitle">İşletme Çözümleri</span>
+            <h2 id="services-heading">Hizmetlerimiz</h2>
             <p>Dijital dünyada iz bırakmak isteyen markalar için stratejik çözümler üretiyoruz.</p>
           </div>
           
           {/* Carousel Layout */}
-          <div className="services-carousel-container">
-            <button className="services-carousel-btn prev-btn" onClick={prevServicesSlide} aria-label="Onceki" disabled={!hasMultipleServiceSlides()}>
+          <div className="services-carousel-container" role="region" aria-label="Hizmetler carousel">
+            <button className="services-carousel-btn prev-btn" onClick={prevServicesSlide} aria-label="Önceki Hizmetler" disabled={!hasMultipleServiceSlides()}>
               ‹
             </button>
             
-            <div className="services-carousel-track">
+            <div className="services-carousel-track" aria-live="polite" aria-atomic="true">
               <div 
                 key={`services-${servicesSlide}-${servicesSlidesToShow}`}
                 className="services-carousel-content carousel-animating" 
@@ -428,7 +428,7 @@ function App() {
               </div>
             </div>
 
-            <button className="services-carousel-btn next-btn" onClick={nextServicesSlide} aria-label="Sonraki" disabled={!hasMultipleServiceSlides()}>
+            <button className="services-carousel-btn next-btn" onClick={nextServicesSlide} aria-label="Sonraki Hizmetler" disabled={!hasMultipleServiceSlides()}>
               ›
             </button>
           </div>
@@ -436,11 +436,11 @@ function App() {
 
         <ServiceDetails />
 
-        <section id="about" className="about-section">
+        <section id="about" className="about-section" aria-labelledby="about-heading">
           <div className="about-container"><div className="about-content-wrapper reveal"><div className="about-text-content">{/* [ELLE DÜZENLE] BİZ KİMİZ? (beyaz çizgi CSS: .about-subtitle::after) */}
                 <span className="about-subtitle">Biz Kimiz?</span>
                 {/* [ELLE DÜZENLE] HAKKIMIZDA BAŞLIK (sarı çizgi CSS: .about-title) */}
-                <h2 className="about-title">Hakkımızda</h2>
+                <h2 className="about-title" id="about-heading">Hakkımızda</h2>
                 <h3>Dijitalde sade, hızlı ve sonuç odaklı ilerliyoruz.</h3>
                 <p>
                   <strong>2020’den beri</strong> markalar için web tasarım, yazılım ve dijital büyüme çözümleri üretiyoruz. Amacımız yalnızca şık bir görünüm değil, <strong>ölçülebilir sonuç</strong> sağlamak.
