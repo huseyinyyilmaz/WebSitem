@@ -370,13 +370,11 @@ function App() {
           <div className="hero-text reveal">
             {/* [ELLE DÜZENLE] ÇEVRİM İÇİ ROZETİ (CSS: .online-badge-container, .online-dot) */}
             <div className="online-badge-container"><div className="online-dot"></div><span>Şu an Çevrimiçi</span></div>
-            <h1>Profesyonel Web Tasarım Ajansı İstanbul | <br /><span className="outline-text">E-Ticaret & Mobil Uygulama</span> <br />Tasarım Kurdu</h1>
+            <h1>Profesyonel Web Tasarım <br /><span className="outline-text">E-Ticaret & Mobil</span> <br />Çözümleri</h1>
             <p>
-              Geleceği tahmin etmenin en iyi yolu, onu tasarlamaktır. TasarımKurdu olarak vizyonumuz; sadece işlevsel web siteleri yapmak değil, markanıza değer katan, yaşayan ve gelişen dijital ekosistemler kurmaktır. 
+              TasarımKurdu olarak SEO uyumlu, hızlı ve güvenli dijital projeler geliştiriyoruz.
               <br /><br />
-              <strong>İstanbul merkezli</strong> dijital ajansımızda, <strong>React, Python, Node.js</strong> gibi modern teknolojilerle <strong>%100 SEO uyumlu</strong>, hızlı ve güvenli web siteleri geliştiriyoruz. 2020’den beri <strong>500+ başarılı proje</strong>, <strong>250+ mutlu müşteri</strong> ve <strong>%98 müşteri memnuniyeti</strong> ile sektörde güvenilir bir iş ortağıyız.
-              <br /><br />
-              Kurumsal web tasarım, e-ticaret çözümleri, mobil uygulama geliştirme, Google Ads ve sosyal medya yönetimi ile markanızı dijital dünyada zirveye taşıyoruz. Biz bugünü değil, sonrasını düşünerek tasarım yaparız.
+              <strong>500+ proje</strong> deneyimiyle web tasarım, e-ticaret, mobil uygulama ve reklam yönetimini tek çatı altında sunuyoruz.
             </p>
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="offer-btn main-size"><span className="btn-text">TEKLİF ALIN</span><div className="yellow-bg"></div></a>
           </div>

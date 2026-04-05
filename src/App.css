@@ -185,9 +185,9 @@ body { background-color: var(--bg-body); color: var(--text-white); font-family: 
 .hero-section { margin-top: 0; padding-top: 100px; position: relative; display: flex; align-items: center; justify-content: space-between; padding: 0 15%; gap: 40px; min-height: 100vh; width: 100%; background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, var(--bg-body) 100%); overflow: hidden; }
 .hero-section canvas { position: absolute !important; top: 0; left: 0; width: 100% !important; height: 100% !important; z-index: 1; }
 .hero-text { max-width: 650px; flex: 1.2; position: relative; z-index: 20; }
-.hero-text h1 { font-family: 'Montserrat', sans-serif; font-size: var(--fs-h1); line-height: 1.1; font-weight: 900; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
+.hero-text h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(2.5rem, 5vw, 4.4rem); line-height: 1.05; font-weight: 900; margin-bottom: 18px; text-transform: uppercase; letter-spacing: 0.8px; }
 .outline-text { color: transparent; -webkit-text-stroke: 1.5px var(--text-white); }
-.hero-text p { font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: var(--fs-body); line-height: 1.8; color: var(--text-gray); margin-bottom: 35px; letter-spacing: 0.5px; }
+.hero-text p { font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 1rem; line-height: 1.65; color: var(--text-gray); margin-bottom: 26px; letter-spacing: 0.3px; max-width: 560px; }
 .hero-image { flex: 1; display: flex; justify-content: flex-end; position: relative; z-index: 50; }
 .hero-image img { max-width: 650px; width: 100%; filter: grayscale(100%); transition: filter 0.5s; position: relative; pointer-events: auto; animation: float 6s ease-in-out infinite; }
 .hero-image img:hover { filter: grayscale(0%); }
@@ -775,7 +775,7 @@ body { background-color: var(--bg-body); color: var(--text-white); font-family: 
   .desktop-only { display: none !important; }
   .nav-links { display: none; }
   .hero-section { flex-direction: column-reverse; text-align: center; height: auto; padding: 120px 5% 50px 5%; gap: 40px; }
-  .hero-text h1 { font-size: 2.2rem; }
+  .hero-text h1 { font-size: 2rem; }
   .hero-text p { font-size: 0.9rem; margin: 0 auto 30px auto; }
   .hero-image { justify-content: center; }
   .hero-image img { max-width: 80%; margin-top: 20px; }
