@@ -185,6 +185,26 @@ export default function Pricing() {
     }
   ];
 
+  const visibleAdditionalServices = Array.from(
+    { length: Math.min(slidesToShow, additionalServices.length) },
+    (_, offset) => additionalServices[(currentSlide + offset) % additionalServices.length]
+  );
+  const hasMultipleAdditionalSlides = additionalServices.length > slidesToShow;
+
+  const nextAdditionalSlide = () => {
+    if (!hasMultipleAdditionalSlides) return;
+    setCurrentSlide((prev) => (prev + 1) % additionalServices.length);
+  };
+
+  const prevAdditionalSlide = () => {
+    if (!hasMultipleAdditionalSlides) return;
+    setCurrentSlide((prev) => (prev - 1 + additionalServices.length) % additionalServices.length);
+  };
+
+  useEffect(() => {
+    setCurrentSlide((prev) => (additionalServices.length === 0 ? 0 : prev % additionalServices.length));
+  }, [slidesToShow, additionalServices.length]);
+
   return (
     <section id="pricing" className="pricing-section">
       <div className="pricing-container">
@@ -272,8 +292,9 @@ export default function Pricing() {
           <div className="additional-carousel-container">
             <button 
               className="additional-carousel-btn prev-btn" 
-              onClick={() => setCurrentSlide(prev => prev <= 0 ? Math.max(0, additionalServices.length - slidesToShow) : prev - 1)}
-              aria-label="Önceki"
+              onClick={prevAdditionalSlide}
+              aria-label="Onceki"
+              disabled={!hasMultipleAdditionalSlides}
             >
               ‹
             </button>
@@ -281,11 +302,11 @@ export default function Pricing() {
             <div className="additional-carousel-track">
               <div 
                 className="additional-carousel-content"
-                style={{ transform: `translateX(-${currentSlide * (100 / slidesToShow)}%)` }}
+                style={{ gridTemplateColumns: `repeat(${Math.min(slidesToShow, additionalServices.length)}, minmax(0, 1fr))` }}
               >
-                {additionalServices.map((service, index) => (
+                {visibleAdditionalServices.map((service, index) => (
               <motion.div
-                key={service.name}
+                key={`${service.name}-${index}`}
                 className="additional-service-card"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -314,8 +335,9 @@ export default function Pricing() {
 
             <button 
               className="additional-carousel-btn next-btn" 
-              onClick={() => setCurrentSlide(prev => prev >= Math.max(0, additionalServices.length - slidesToShow) ? 0 : prev + 1)}
+              onClick={nextAdditionalSlide}
               aria-label="Sonraki"
+              disabled={!hasMultipleAdditionalSlides}
             >
               ›
             </button>

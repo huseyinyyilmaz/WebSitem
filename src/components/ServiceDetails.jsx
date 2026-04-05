@@ -185,8 +185,11 @@ const getSlidesToShowByViewport = () => {
 export default function ServiceDetails() {
   const [slidesToShow, setSlidesToShow] = useState(getSlidesToShowByViewport);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const detailsCarouselGap = 24;
-  const maxSlide = Math.max(serviceDetails.length - slidesToShow, 0);
+  const hasMultipleDetailSlides = serviceDetails.length > slidesToShow;
+  const visibleServiceDetails = Array.from(
+    { length: Math.min(slidesToShow, serviceDetails.length) },
+    (_, offset) => serviceDetails[(currentSlide + offset) % serviceDetails.length]
+  );
 
   useEffect(() => {
     const handleResize = () => setSlidesToShow(getSlidesToShowByViewport());
@@ -195,15 +198,17 @@ export default function ServiceDetails() {
   }, []);
 
   useEffect(() => {
-    setCurrentSlide((prev) => (prev > maxSlide ? maxSlide : prev));
-  }, [maxSlide]);
+    setCurrentSlide((prev) => (serviceDetails.length === 0 ? 0 : prev % serviceDetails.length));
+  }, [slidesToShow]);
 
   const nextSlide = () => {
-    setCurrentSlide(prev => (prev >= maxSlide ? 0 : prev + 1));
+    if (!hasMultipleDetailSlides) return;
+    setCurrentSlide((prev) => (prev + 1) % serviceDetails.length);
   };
 
   const prevSlide = () => {
-    setCurrentSlide(prev => (prev <= 0 ? maxSlide : prev - 1));
+    if (!hasMultipleDetailSlides) return;
+    setCurrentSlide((prev) => (prev - 1 + serviceDetails.length) % serviceDetails.length);
   };
 
   const serviceSchema = {
@@ -250,21 +255,20 @@ export default function ServiceDetails() {
         </motion.div>
 
         <div className="service-details-carousel-container">
-          <button className="service-details-carousel-btn prev-btn" onClick={prevSlide} aria-label="Önceki">
+          <button className="service-details-carousel-btn prev-btn" onClick={prevSlide} aria-label="Onceki" disabled={!hasMultipleDetailSlides}>
             ‹
           </button>
           
           <div className="service-details-carousel-track">
             <div 
               className="service-details-carousel-content" 
-              style={{ transform: `translateX(-${currentSlide * (100 / slidesToShow)}%)` }}
+              style={{ gridTemplateColumns: `repeat(${Math.min(slidesToShow, serviceDetails.length)}, minmax(0, 1fr))` }}
             >
-              {serviceDetails.map((item, index) => (
+              {visibleServiceDetails.map((item, index) => (
                 <motion.article
-                  key={item.id}
+                  key={`${item.id}-${index}`}
                   id={`service-${item.id}`}
                   className="service-detail-card reveal"
-                  style={{ minWidth: `calc((100% - ${(slidesToShow - 1) * detailsCarouselGap}px) / ${slidesToShow})` }}
                   initial={{ opacity: 0, y: 25 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -298,7 +302,7 @@ export default function ServiceDetails() {
             </div>
           </div>
 
-          <button className="service-details-carousel-btn next-btn" onClick={nextSlide} aria-label="Sonraki">
+          <button className="service-details-carousel-btn next-btn" onClick={nextSlide} aria-label="Sonraki" disabled={!hasMultipleDetailSlides}>
             ›
           </button>
         </div>

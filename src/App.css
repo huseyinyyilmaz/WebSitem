@@ -286,14 +286,13 @@ body { background-color: var(--bg-body); color: var(--text-white); font-family: 
 }
 
 .services-carousel-content {
-  display: flex;
-  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  display: grid;
   gap: 28px;
+  width: 100%;
 }
 
 .services-carousel-content .service-card {
-  min-width: calc(25% - 21px);
-  flex-shrink: 0;
+  min-width: 0;
 }
 
 .services-carousel-btn {
@@ -1077,9 +1076,9 @@ body { background-color: var(--bg-body); color: var(--text-white); font-family: 
 }
 
 .additional-carousel-content {
-  display: flex;
-  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  display: grid;
   gap: 25px;
+  width: 100%;
 }
 
 .additional-carousel-btn {
@@ -1116,7 +1115,7 @@ body { background-color: var(--bg-body); color: var(--text-white); font-family: 
 }
 
 .additional-services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; display: none; }
-.additional-service-card { background: var(--bg-card); border: 1px solid var(--border-dark); border-radius: 14px; padding: 22px 18px; transition: all 0.3s; display: flex; flex-direction: column; align-items: stretch; min-width: calc(25% - 18.75px); flex-shrink: 0; }
+.additional-service-card { background: var(--bg-card); border: 1px solid var(--border-dark); border-radius: 14px; padding: 22px 18px; transition: all 0.3s; display: flex; flex-direction: column; align-items: stretch; min-width: 0; }
 .additional-service-card:hover { transform: translateY(-8px); border-color: var(--primary); box-shadow: 0 12px 35px rgba(0,0,0,0.6); }
 .additional-icon { color: var(--primary); margin: 0 auto 16px; display: flex; justify-content: center; align-items: center; width: 55px; height: 55px; background: rgba(251, 191, 36, 0.1); border-radius: 50%; }
 .additional-icon svg { width: 30px; height: 30px; }
@@ -1257,14 +1256,13 @@ body { background-color: var(--bg-body); color: var(--text-white); font-family: 
 }
 
 .service-details-carousel-content {
-  display: flex;
-  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  display: grid;
   gap: 24px;
+  width: 100%;
 }
 
 .service-details-carousel-content .service-detail-card {
-  min-width: calc(25% - 18px);
-  flex-shrink: 0;
+  min-width: 0;
 }
 
 .service-details-carousel-btn {
@@ -1298,6 +1296,16 @@ body { background-color: var(--bg-body); color: var(--text-white); font-family: 
 
 .service-details-carousel-btn.next-btn {
   right: 10px;
+}
+
+.services-carousel-btn:disabled,
+.service-details-carousel-btn:disabled,
+.additional-carousel-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none;
+  transform: translateY(-50%);
 }
 
 .service-details-grid { 

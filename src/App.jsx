@@ -92,20 +92,19 @@ function App() {
   }, []);
 
   const servicesSlidesToShow = isMobile ? 1 : isTablet ? 2 : 4;
-  const servicesCarouselGap = 28;
 
   // Services carousel state
   const [servicesSlide, setServicesSlide] = useState(0);
-  const getServicesMaxSlide = () => Math.max(servicesOriginal.length - servicesSlidesToShow, 0);
+  const hasMultipleServiceSlides = () => servicesOriginal.length > servicesSlidesToShow;
 
   const nextServicesSlide = () => {
-    const maxSlide = getServicesMaxSlide();
-    setServicesSlide(prev => (prev >= maxSlide ? 0 : prev + 1));
+    if (!hasMultipleServiceSlides()) return;
+    setServicesSlide((prev) => (prev + 1) % servicesOriginal.length);
   };
 
   const prevServicesSlide = () => {
-    const maxSlide = getServicesMaxSlide();
-    setServicesSlide(prev => (prev <= 0 ? maxSlide : prev - 1));
+    if (!hasMultipleServiceSlides()) return;
+    setServicesSlide((prev) => (prev - 1 + servicesOriginal.length) % servicesOriginal.length);
   };
 
   const servicesOriginal = [
@@ -153,12 +152,10 @@ function App() {
     }
   ];
 
-  const services = [...servicesOriginal, ...servicesOriginal, ...servicesOriginal];
-
-  useEffect(() => {
-    const maxSlide = Math.max(servicesOriginal.length - servicesSlidesToShow, 0);
-    setServicesSlide((prev) => (prev > maxSlide ? maxSlide : prev));
-  }, [servicesSlidesToShow]);
+  const visibleServices = Array.from(
+    { length: Math.min(servicesSlidesToShow, servicesOriginal.length) },
+    (_, offset) => servicesOriginal[(servicesSlide + offset) % servicesOriginal.length]
+  );
 
   const philosophyData = [
     { title: "Biz Ne Değiliz?", desc: "Gösterip geçmeyiz, etki bırakmıyorsa yapmayız." },
@@ -397,20 +394,19 @@ function App() {
           
           {/* Carousel Layout */}
           <div className="services-carousel-container">
-            <button className="services-carousel-btn prev-btn" onClick={prevServicesSlide} aria-label="Önceki">
+            <button className="services-carousel-btn prev-btn" onClick={prevServicesSlide} aria-label="Onceki" disabled={!hasMultipleServiceSlides()}>
               ‹
             </button>
             
             <div className="services-carousel-track">
               <div 
                 className="services-carousel-content" 
-                style={{ transform: `translateX(-${servicesSlide * (100 / servicesSlidesToShow)}%)` }}
+                style={{ gridTemplateColumns: `repeat(${Math.min(servicesSlidesToShow, servicesOriginal.length)}, minmax(0, 1fr))` }}
               >
-                {servicesOriginal.map((service, index) => (
+                {visibleServices.map((service, index) => (
                   <div
-                    key={service.id}
+                    key={`${service.id}-${index}`}
                     className="service-card"
-                    style={{ minWidth: `calc((100% - ${(servicesSlidesToShow - 1) * servicesCarouselGap}px) / ${servicesSlidesToShow})` }}
                   >
                     <div className="card-number-bg">{String(index + 1).padStart(2, '0')}</div>
                     <div className="card-top">
@@ -431,7 +427,7 @@ function App() {
               </div>
             </div>
 
-            <button className="services-carousel-btn next-btn" onClick={nextServicesSlide} aria-label="Sonraki">
+            <button className="services-carousel-btn next-btn" onClick={nextServicesSlide} aria-label="Sonraki" disabled={!hasMultipleServiceSlides()}>
               ›
             </button>
           </div>
@@ -609,3 +605,4 @@ function App() {
 }
 
 export default App;
+
