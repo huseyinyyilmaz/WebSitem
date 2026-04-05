@@ -185,6 +185,7 @@ const getSlidesToShowByViewport = () => {
 export default function ServiceDetails() {
   const [slidesToShow, setSlidesToShow] = useState(getSlidesToShowByViewport);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const whatsappLink = 'https://wa.me/+905541460813';
   const hasMultipleDetailSlides = serviceDetails.length > slidesToShow;
   const visibleServiceDetails = Array.from(
     { length: Math.min(slidesToShow, serviceDetails.length) },
@@ -295,8 +296,13 @@ export default function ServiceDetails() {
                   <h4>SEO ve Ticari Kazanım</h4>
                   <p className="service-detail-seo">{item.seoGain}</p>
 
-                  <a href="#pricing" className="service-detail-cta">
-                    Bu hizmet için fiyatlandırmayı gör
+                  <a
+                    href={whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="service-detail-cta"
+                  >
+                    Detayli bilgi icin WhatsApp'tan yaz
                   </a>
                 </motion.article>
               ))}
