@@ -261,7 +261,8 @@ export default function ServiceDetails() {
           
           <div className="service-details-carousel-track">
             <div 
-              className="service-details-carousel-content" 
+              key={`detail-${currentSlide}-${slidesToShow}`}
+              className="service-details-carousel-content carousel-animating" 
               style={{ gridTemplateColumns: `repeat(${Math.min(slidesToShow, serviceDetails.length)}, minmax(0, 1fr))` }}
             >
               {visibleServiceDetails.map((item, index) => (

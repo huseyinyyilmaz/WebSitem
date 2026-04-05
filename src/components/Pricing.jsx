@@ -301,7 +301,8 @@ export default function Pricing() {
             
             <div className="additional-carousel-track">
               <div 
-                className="additional-carousel-content"
+                key={`additional-${currentSlide}-${slidesToShow}`}
+                className="additional-carousel-content carousel-animating"
                 style={{ gridTemplateColumns: `repeat(${Math.min(slidesToShow, additionalServices.length)}, minmax(0, 1fr))` }}
               >
                 {visibleAdditionalServices.map((service, index) => (

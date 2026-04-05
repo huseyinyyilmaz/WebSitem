@@ -400,7 +400,8 @@ function App() {
             
             <div className="services-carousel-track">
               <div 
-                className="services-carousel-content" 
+                key={`services-${servicesSlide}-${servicesSlidesToShow}`}
+                className="services-carousel-content carousel-animating" 
                 style={{ gridTemplateColumns: `repeat(${Math.min(servicesSlidesToShow, servicesOriginal.length)}, minmax(0, 1fr))` }}
               >
                 {visibleServices.map((service, index) => (
