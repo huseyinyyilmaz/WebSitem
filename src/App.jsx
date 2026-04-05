@@ -471,7 +471,7 @@ function App() {
                   </div>
                 </div>
                 <span className="gold-badge-number"></span>
-              </div><div className="gold-badge-content"><h2>Yarının Tasarımları, Bugünden.</h2></div></div></div><div className="about-image-wrapper reveal"><img src={aboutImg} alt="Hakkımızda" /></div></div>
+              </div><div className="gold-badge-content"><h2>Yarının Tasarımları, Bugünden.</h2></div></div></div><div className="about-image-wrapper reveal"><img src={aboutImg} alt="Profesyonel Web Tasarım ve Dijital Pazarlama Hizmetleri - Tasarım Kurdu Ekibi" /></div></div>
         </section>
 
         <section id="how-it-works" className="how-it-works-section">
