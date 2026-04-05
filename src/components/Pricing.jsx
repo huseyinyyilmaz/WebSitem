@@ -1,6 +1,21 @@
 ﻿import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 export default function Pricing() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [slidesToShow, setSlidesToShow] = useState(4);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 640) setSlidesToShow(1);
+      else if (window.innerWidth <= 1100) setSlidesToShow(2);
+      else setSlidesToShow(4);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const plans = [
     {
       name: 'Baslangic',
@@ -254,8 +269,21 @@ export default function Pricing() {
             <p>Paketinizi güçlendirecek ek servislerimizi ihtiyacınıza göre seçip birlikte planlayabiliriz.</p>
           </div>
 
-          <div className="additional-services-grid">
-            {additionalServices.map((service, index) => (
+          <div className="additional-carousel-container">
+            <button 
+              className="additional-carousel-btn prev-btn" 
+              onClick={() => setCurrentSlide(prev => prev <= 0 ? Math.max(0, additionalServices.length - slidesToShow) : prev - 1)}
+              aria-label="Önceki"
+            >
+              ‹
+            </button>
+            
+            <div className="additional-carousel-track">
+              <div 
+                className="additional-carousel-content"
+                style={{ transform: `translateX(-${currentSlide * (100 / slidesToShow)}%)` }}
+              >
+                {additionalServices.map((service, index) => (
               <motion.div
                 key={service.name}
                 className="additional-service-card"
@@ -280,7 +308,17 @@ export default function Pricing() {
                   {service.isMonthly ? <span className="period">/ay</span> : <span className="period"> tek seferlik</span>}
                 </div>
               </motion.div>
-            ))}
+                ))}
+              </div>
+            </div>
+
+            <button 
+              className="additional-carousel-btn next-btn" 
+              onClick={() => setCurrentSlide(prev => prev >= Math.max(0, additionalServices.length - slidesToShow) ? 0 : prev + 1)}
+              aria-label="Sonraki"
+            >
+              ›
+            </button>
           </div>
         </motion.div>
 

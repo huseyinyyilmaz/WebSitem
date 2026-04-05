@@ -576,7 +576,21 @@ body { background-color: var(--bg-body); color: var(--text-white); font-family: 
 /* ============================================================ */
 /* 6. HAKKIMIZDA BÖLÜMÜ */
 /* ============================================================ */
-.about-section { position: relative; z-index: 10; padding: 100px 15%; background-color: var(--bg-body); background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px); background-size: 150px 100%; }
+.about-section { 
+  position: relative; 
+  z-index: 10; 
+  padding: 100px 15%; 
+  background-color: var(--bg-body); 
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px); 
+  background-size: 150px 100%;
+  box-shadow: 0 0 80px rgba(251, 191, 36, 0.15), 0 0 120px rgba(251, 191, 36, 0.1);
+  animation: about-glow 3s ease-in-out infinite;
+}
+
+@keyframes about-glow {
+  0%, 100% { box-shadow: 0 0 80px rgba(251, 191, 36, 0.15), 0 0 120px rgba(251, 191, 36, 0.1); }
+  50% { box-shadow: 0 0 100px rgba(251, 191, 36, 0.25), 0 0 150px rgba(251, 191, 36, 0.15); }
+}
 .about-container { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
 .about-text-content { display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding-left: 50px; padding-right: 10px; margin-top: 0px; }
 .about-subtitle { color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; display: inline-block; margin-bottom: 15px; position: relative; padding-bottom: 8px; }
@@ -1049,19 +1063,72 @@ body { background-color: var(--bg-body); color: var(--text-white); font-family: 
 /* Additional Services */
 .additional-services-section { margin-top: 80px; margin-bottom: 50px; }
 .additional-pricing-header { margin-bottom: 50px; }
-.additional-services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-.additional-service-card { background: var(--bg-card); border: 1px solid var(--border-dark); border-radius: 16px; padding: 30px 25px; transition: all 0.3s; display: flex; flex-direction: column; align-items: stretch; }
+/* Additional Services Carousel */
+.additional-carousel-container {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.additional-carousel-track {
+  overflow: hidden;
+  position: relative;
+}
+
+.additional-carousel-content {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  gap: 25px;
+}
+
+.additional-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: var(--bg-card);
+  border: 1px solid var(--primary);
+  border-radius: 50%;
+  color: var(--primary);
+  cursor: pointer;
+  z-index: 10;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.additional-carousel-btn:hover {
+  background: var(--primary);
+  color: #000;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.additional-carousel-btn.prev-btn {
+  left: 10px;
+}
+
+.additional-carousel-btn.next-btn {
+  right: 10px;
+}
+
+.additional-services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; display: none; }
+.additional-service-card { background: var(--bg-card); border: 1px solid var(--border-dark); border-radius: 14px; padding: 22px 18px; transition: all 0.3s; display: flex; flex-direction: column; align-items: stretch; min-width: calc(25% - 18.75px); flex-shrink: 0; }
 .additional-service-card:hover { transform: translateY(-8px); border-color: var(--primary); box-shadow: 0 12px 35px rgba(0,0,0,0.6); }
-.additional-icon { color: var(--primary); margin: 0 auto 20px; display: flex; justify-content: center; align-items: center; width: 70px; height: 70px; background: rgba(251, 191, 36, 0.1); border-radius: 50%; }
-.additional-service-card h4 { color: var(--text-white); font-size: 1.3rem; font-weight: 700; margin-bottom: 12px; text-align: center; }
-.additional-service-card p { color: var(--text-gray); font-size: 0.9rem; margin-bottom: 16px; line-height: 1.6; text-align: center; }
-.additional-service-details { list-style: none; margin: 0 0 18px; padding: 0; display: flex; flex-direction: column; gap: 10px; }
-.additional-service-details li { color: var(--text-gray); font-size: 0.88rem; line-height: 1.5; display: flex; gap: 10px; align-items: flex-start; }
+.additional-icon { color: var(--primary); margin: 0 auto 16px; display: flex; justify-content: center; align-items: center; width: 55px; height: 55px; background: rgba(251, 191, 36, 0.1); border-radius: 50%; }
+.additional-icon svg { width: 30px; height: 30px; }
+.additional-service-card h4 { color: var(--text-white); font-size: 1.15rem; font-weight: 700; margin-bottom: 10px; text-align: center; }
+.additional-service-card p { color: var(--text-gray); font-size: 0.84rem; margin-bottom: 14px; line-height: 1.5; text-align: center; }
+.additional-service-details { list-style: none; margin: 0 0 14px; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.additional-service-details li { color: var(--text-gray); font-size: 0.82rem; line-height: 1.4; display: flex; gap: 8px; align-items: flex-start; }
 .additional-service-details li::before { content: '•'; color: var(--primary); font-size: 1.1rem; line-height: 1; margin-top: 1px; }
 .additional-price { margin-top: auto; }
-.additional-price .price { color: var(--primary); font-size: 2rem; font-weight: 900; }
-.additional-price .currency { color: var(--primary); font-size: 1.2rem; font-weight: 700; margin-left: 3px; }
-.additional-price .period { color: var(--text-gray); font-size: 0.85rem; margin-left: 3px; }
+.additional-price .price { color: var(--primary); font-size: 1.7rem; font-weight: 900; }
+.additional-price .currency { color: var(--primary); font-size: 1rem; font-weight: 700; margin-left: 3px; }
+.additional-price .period { color: var(--text-gray); font-size: 0.78rem; margin-left: 3px; }
 
 .pricing-note { display: flex; align-items: center; gap: 20px; background: var(--bg-card); border: 1px solid var(--border-dark); border-radius: 16px; padding: 30px; }
 .note-icon { font-size: 2.5rem; }
