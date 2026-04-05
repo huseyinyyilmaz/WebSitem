@@ -582,7 +582,7 @@ body { background-color: var(--bg-body); color: var(--text-white); font-family: 
 .about-section { 
   position: relative; 
   z-index: 10; 
-  padding: 100px 15%; 
+  padding: 82px 12%; 
   background-color: var(--bg-body); 
   background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px); 
   background-size: 150px 100%;
@@ -594,15 +594,16 @@ body { background-color: var(--bg-body); color: var(--text-white); font-family: 
   0%, 100% { box-shadow: 0 0 80px rgba(251, 191, 36, 0.15), 0 0 120px rgba(251, 191, 36, 0.1); }
   50% { box-shadow: 0 0 100px rgba(251, 191, 36, 0.25), 0 0 150px rgba(251, 191, 36, 0.15); }
 }
-.about-container { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.about-text-content { display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding-left: 50px; padding-right: 10px; margin-top: 0px; }
-.about-subtitle { color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; display: inline-block; margin-bottom: 15px; position: relative; padding-bottom: 8px; }
+.about-container { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.about-text-content { display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding-left: 20px; padding-right: 10px; margin-top: 0px; }
+.about-subtitle { color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.82rem; display: inline-block; margin-bottom: 10px; position: relative; padding-bottom: 8px; }
 .about-subtitle::after { content: ''; position: absolute; left: 0; bottom: 0; width: var(--biz-kimiz-cizgi-uzunluk); height: var(--biz-kimiz-cizgi-kalinlik); background-color: var(--biz-kimiz-cizgi-renk); }
-.about-text-content h2 { font-size: 2.8rem; font-weight: 900; color: var(--text-white); margin-bottom: 20px; line-height: 1; display: inline-block; position: relative; padding-bottom: var(--hakkimizda-cizgi-mesafe); overflow: visible; }
+.about-text-content h2 { font-size: 2.2rem; font-weight: 900; color: var(--text-white); margin-bottom: 12px; line-height: 1; display: inline-block; position: relative; padding-bottom: var(--hakkimizda-cizgi-mesafe); overflow: visible; }
 .about-text-content h2::after { content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: var(--hakkimizda-cizgi-kalinlik); background-color: var(--hakkimizda-cizgi-renk); border-radius: 2px; }
-.about-text-content h3 { font-size: 1.5rem; font-weight: 700; color: var(--text-white); margin-bottom: 25px; }
-.about-text-content p { color: var(--text-gray); line-height: 1.7; font-size: 1rem; margin-bottom: 0px; }
-.about-gold-badge { margin-left: 160px; margin-right: 50px; margin-top: 60px; border-radius: 30px; background-color: var(--bg-card); background-image: linear-gradient(to right, transparent 5%, var(--primary) 50%, transparent 95%), linear-gradient(to bottom, transparent 5%, var(--primary) 50%, transparent 95%), linear-gradient(to right, transparent 5%, var(--primary) 50%, transparent 95%), linear-gradient(to bottom, transparent 5%, var(--primary) 50%, transparent 95%); background-size: 100% 3px, 3px 100%, 100% 3px, 3px 100%; background-position: top center, right center, bottom center, left center; background-repeat: no-repeat; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; height: auto; min-height: unset; gap: 15px; }
+.about-text-content h3 { font-size: 1.16rem; font-weight: 700; color: var(--text-white); margin-bottom: 14px; line-height: 1.35; }
+.about-text-content p { color: var(--text-gray); line-height: 1.6; font-size: 0.92rem; margin-bottom: 10px; max-width: 620px; }
+.about-text-content p:last-child { margin-bottom: 0; }
+.about-gold-badge { margin-left: 120px; margin-right: 32px; margin-top: 40px; border-radius: 30px; background-color: var(--bg-card); background-image: linear-gradient(to right, transparent 5%, var(--primary) 50%, transparent 95%), linear-gradient(to bottom, transparent 5%, var(--primary) 50%, transparent 95%), linear-gradient(to right, transparent 5%, var(--primary) 50%, transparent 95%), linear-gradient(to bottom, transparent 5%, var(--primary) 50%, transparent 95%); background-size: 100% 3px, 3px 100%, 100% 3px, 3px 100%; background-position: top center, right center, bottom center, left center; background-repeat: no-repeat; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; height: auto; min-height: unset; gap: 15px; }
 .about-gold-badge .logo--navbar .navbar-logo-img { transform: none !important; width: 50px; height: 56px; }
 .about-gold-badge .logo--navbar .logo-text-container { margin-left: 12px !important; }
 .gold-badge-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; gap: var(--rozet-logo-metin-gap); width: 100%; }
@@ -613,7 +614,7 @@ body { background-color: var(--bg-body); color: var(--text-white); font-family: 
 .gold-badge-sub { font-size: 11px; color: #b5b5b5; letter-spacing: 0.6px; margin-top: 2px; }
 .gold-badge-number { color: var(--primary); font-weight: 900; font-size: 2rem; line-height: 1; }
 .gold-badge-content { padding-left: 50px; }
-.gold-badge-content h2 { color: var(--text-white); font-size: 1.6rem; font-weight: 800; line-height: 2; margin-bottom: 0; }
+.gold-badge-content h2 { color: var(--text-white); font-size: 1.35rem; font-weight: 800; line-height: 1.5; margin-bottom: 0; }
 .gold-badge-line { display: none; }
 .about-image-wrapper { position: relative; height: 100%; border-radius: 24px; overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.6); }
 .about-image-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.9) contrast(1.1); transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); }

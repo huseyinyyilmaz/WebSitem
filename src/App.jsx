@@ -441,22 +441,15 @@ function App() {
                 <span className="about-subtitle">Biz Kimiz?</span>
                 {/* [ELLE DÜZENLE] HAKKIMIZDA BAŞLIK (sarı çizgi CSS: .about-title) */}
                 <h2 className="about-title">Hakkımızda</h2>
-                <h3>Dijital dünyada sıradan olmayı reddediyoruz.</h3>
+                <h3>Dijitalde sade, hızlı ve sonuç odaklı ilerliyoruz.</h3>
                 <p>
-                  <strong>2020’den bu yana</strong> markaların dijitalde güçlü, hızlı ve etkileyici bir duruş sergilemesi için çalışıyoruz. Web tasarım ve dijital çözümlerimizde, yalnızca göze hitap eden değil, aynı zamanda <strong>sonuç üreten</strong> projeler geliştiriyoruz.
+                  <strong>2020’den beri</strong> markalar için web tasarım, yazılım ve dijital büyüme çözümleri üretiyoruz. Amacımız yalnızca şık bir görünüm değil, <strong>ölçülebilir sonuç</strong> sağlamak.
                 </p>
                 <p>
-                  <strong>Kullanıcı deneyimi (UX), performans ve modern tasarım anlayışıyla</strong>; markaları dijital dünyada bir adım öne taşıyoruz. <strong>Google Core Web Vitals</strong> standartlarına uygun, hızlı yüklenme süreleri ve mükemmel performans skorlarıyla arama motorlarında üst sıralarda yer almanizi sağlıyoruz.
+                  <strong>500+ proje</strong>, <strong>250+ müşteri</strong> ve <strong>%98 memnuniyet</strong> oranıyla güvenilir bir iş ortağıyız. Her projede performans, kullanıcı deneyimi ve SEO dengesini koruyoruz.
                 </p>
                 <p>
-                  Ekibimiz <strong>React, Vue.js, Python, Node.js, Swift, Kotlin</strong> gibi modern teknolojilerde uzmanlaşmış yazılım geliştiriciler, UI/UX tasarımcılar, SEO uzmanları ve dijital pazarlama profesyonellerinden oluşuyor. Her proje için <strong>özel stratejiler</strong> geliştiriyor, sektör analizi yapıyor ve rakiplerinizin önüne geçmenizi sağlıyoruz.
-                </p>
-                <p>
-                  <strong>500+ başarılı proje</strong>, <strong>250+ mutlu müşteri</strong> ve <strong>%98 müşteri memnuniyeti</strong> oranlarıyla sektörde güvenilir bir iş ortağıyız. ISO 27001 bilgi güvenliği standartlarına uygun çalışıyor, müşteri verilerini en yüksek güvenlik seviyesinde koruyoruz.
-                </p>
-                <p>
-                  <strong>Misyonumuz:</strong> Markaları dijital dönüşümde lider konuma taşımak, teknoloji ve yaratıcılığı bir araya getirerek ölçülebilir sonuçlar üretmek.<br />
-                  <strong>Vizyonumuz:</strong> Türkiye’nin en güvenilir ve yenilikçi dijital ajansı olmak, global pazarda rekabet edebilir dijital çözümler sunmak.
+                  <strong>Misyon:</strong> Teknoloji ve yaratıcılığı birleştirip markanızı büyütmek. <strong>Vizyon:</strong> Türkiye’nin en güvenilir dijital çözüm partnerlerinden biri olmak.
                 </p>
               </div><div className="about-gold-badge"><div className="gold-badge-header">
                 {/* [ELLE DÜZENLE] ROZET LOGOSU + MARKA YAZISI (navbar logosundan bağımsız) */}
