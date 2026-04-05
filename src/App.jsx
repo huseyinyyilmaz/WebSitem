@@ -88,6 +88,18 @@ function App() {
 
   const slidesPerView = isMobile ? 1 : 3;
 
+  // Services carousel state
+  const [servicesSlide, setServicesSlide] = useState(0);
+  const servicesMaxSlide = servicesOriginal.length - 3;
+
+  const nextServicesSlide = () => {
+    setServicesSlide(prev => (prev >= servicesMaxSlide ? 0 : prev + 1));
+  };
+
+  const prevServicesSlide = () => {
+    setServicesSlide(prev => (prev <= 0 ? servicesMaxSlide : prev - 1));
+  };
+
   const servicesOriginal = [
     { 
       id: "01", 
@@ -369,26 +381,41 @@ function App() {
             <p>Dijital dünyada iz bırakmak isteyen markalar için stratejik çözümler üretiyoruz.</p>
           </div>
           
-          {/* Grid Layout - Tüm Hizmetleri Göster */}
-          <div className="services-grid-all reveal">
-            {servicesOriginal.map((service, index) => (
-              <div key={service.id} className="service-card">
-                <div className="card-number-bg">{String(index + 1).padStart(2, '0')}</div>
-                <div className="card-top">
-                  <div className="card-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      {service.icon}
-                    </svg>
+          {/* Carousel Layout */}
+          <div className="services-carousel-container">
+            <button className="services-carousel-btn prev-btn" onClick={prevServicesSlide} aria-label="Önceki">
+              ‹
+            </button>
+            
+            <div className="services-carousel-track">
+              <div 
+                className="services-carousel-content" 
+                style={{ transform: `translateX(-${servicesSlide * (100 / 3)}%)` }}
+              >
+                {servicesOriginal.map((service, index) => (
+                  <div key={service.id} className="service-card">
+                    <div className="card-number-bg">{String(index + 1).padStart(2, '0')}</div>
+                    <div className="card-top">
+                      <div className="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          {service.icon}
+                        </svg>
+                      </div>
+                    </div>
+                    <h3>{service.title}</h3>
+                    <p>{service.desc}</p>
+                    <a href="#service-details" className="card-footer">
+                      <span className="detail-link">Detaylı Bilgi</span>
+                      <div className="detail-circle">→</div>
+                    </a>
                   </div>
-                </div>
-                <h3>{service.title}</h3>
-                <p>{service.desc}</p>
-                <a href="#service-details" className="card-footer">
-                  <span className="detail-link">Detaylı Bilgi</span>
-                  <div className="detail-circle">→</div>
-                </a>
+                ))}
               </div>
-            ))}
+            </div>
+
+            <button className="services-carousel-btn next-btn" onClick={nextServicesSlide} aria-label="Sonraki">
+              ›
+            </button>
           </div>
         </section>
 

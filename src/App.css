@@ -272,14 +272,66 @@ body { background-color: var(--bg-body); color: var(--text-white); font-family: 
   font-size: 1.05rem;
 }
 
-/* Grid Layout için tüm kartları gösterelim */
-.services-grid-all {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 28px;
+/* Services Carousel */
+.services-carousel-container {
+  position: relative;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 80px;
+}
+
+.services-carousel-track {
+  overflow: hidden;
+  position: relative;
+}
+
+.services-carousel-content {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  gap: 28px;
+}
+
+.services-carousel-content .service-card {
+  min-width: calc(33.333% - 18.67px);
+  flex-shrink: 0;
+}
+
+.services-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: var(--bg-card);
+  border: 1px solid var(--primary);
+  border-radius: 50%;
+  color: var(--primary);
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  font-size: 1.5rem;
+}
+
+.services-carousel-btn:hover {
+  background: var(--primary);
+  color: black;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.services-carousel-btn.prev-btn {
+  left: 10px;
+}
+
+.services-carousel-btn.next-btn {
+  right: 10px;
+}
+
+/* Grid Layout için tüm kartları gösterelim */
+.services-grid-all {
+  display: none; /* Artık carousel kullanacağız */
 }
 
 .slider-container { 
@@ -523,8 +575,8 @@ body { background-color: var(--bg-body); color: var(--text-white); font-family: 
 /* 6. HAKKIMIZDA BÖLÜMÜ */
 /* ============================================================ */
 .about-section { position: relative; z-index: 10; padding: 100px 15%; background-color: var(--bg-body); background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px); background-size: 150px 100%; }
-.about-container { display: grid; grid-template-columns: 1.5fr 1fr; gap: 100px; align-items: center; }
-.about-text-content { display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding-left: 170px; padding-right: 10px; margin-top: 0px; }
+.about-container { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.about-text-content { display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding-left: 50px; padding-right: 10px; margin-top: 0px; }
 .about-subtitle { color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; display: inline-block; margin-bottom: 15px; position: relative; padding-bottom: 8px; }
 .about-subtitle::after { content: ''; position: absolute; left: 0; bottom: 0; width: var(--biz-kimiz-cizgi-uzunluk); height: var(--biz-kimiz-cizgi-kalinlik); background-color: var(--biz-kimiz-cizgi-renk); }
 .about-text-content h2 { font-size: 2.8rem; font-weight: 900; color: var(--text-white); margin-bottom: 20px; line-height: 1; display: inline-block; position: relative; padding-bottom: var(--hakkimizda-cizgi-mesafe); overflow: visible; }
@@ -1122,12 +1174,65 @@ body { background-color: var(--bg-body); color: var(--text-white); font-family: 
   font-size: 1.05rem;
 }
 
-.service-details-grid { 
-  display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); 
-  gap: 24px;
+/* ServiceDetails Carousel */
+.service-details-carousel-container {
+  position: relative;
   max-width: 1400px;
   margin: 0 auto;
+  padding: 0 80px;
+}
+
+.service-details-carousel-track {
+  overflow: hidden;
+  position: relative;
+}
+
+.service-details-carousel-content {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  gap: 24px;
+}
+
+.service-details-carousel-content .service-detail-card {
+  min-width: calc(33.333% - 16px);
+  flex-shrink: 0;
+}
+
+.service-details-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: var(--bg-card);
+  border: 1px solid var(--primary);
+  border-radius: 50%;
+  color: var(--primary);
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  font-size: 1.5rem;
+}
+
+.service-details-carousel-btn:hover {
+  background: var(--primary);
+  color: black;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.service-details-carousel-btn.prev-btn {
+  left: 10px;
+}
+
+.service-details-carousel-btn.next-btn {
+  right: 10px;
+}
+
+.service-details-grid { 
+  display: none; /* Artık carousel kullanacağız */
 }
 
 .service-detail-card { 

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 const serviceDetails = [
   {
@@ -175,6 +176,18 @@ const serviceDetails = [
 ];
 
 export default function ServiceDetails() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slidesToShow = 3;
+  const maxSlide = serviceDetails.length - slidesToShow;
+
+  const nextSlide = () => {
+    setCurrentSlide(prev => (prev >= maxSlide ? 0 : prev + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide(prev => (prev <= 0 ? maxSlide : prev - 1));
+  };
+
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -218,42 +231,57 @@ export default function ServiceDetails() {
           </p>
         </motion.div>
 
-        <div className="service-details-grid">
-          {serviceDetails.map((item, index) => (
-            <motion.article
-              key={item.id}
-              id={`service-${item.id}`}
-              className="service-detail-card reveal"
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
+        <div className="service-details-carousel-container">
+          <button className="service-details-carousel-btn prev-btn" onClick={prevSlide} aria-label="Önceki">
+            ‹
+          </button>
+          
+          <div className="service-details-carousel-track">
+            <div 
+              className="service-details-carousel-content" 
+              style={{ transform: `translateX(-${currentSlide * (100 / slidesToShow)}%)` }}
             >
-              <h3>{item.title}</h3>
-              <p className="service-detail-summary">{item.summary}</p>
+              {serviceDetails.map((item, index) => (
+                <motion.article
+                  key={item.id}
+                  id={`service-${item.id}`}
+                  className="service-detail-card reveal"
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.05 }}
+                >
+                  <h3>{item.title}</h3>
+                  <p className="service-detail-summary">{item.summary}</p>
 
-              <h4>Neler Dahil?</h4>
-              <ul>
-                {item.includeItems.map((line) => (
-                  <li key={line}>{line}</li>
-                ))}
-              </ul>
+                  <h4>Neler Dahil?</h4>
+                  <ul>
+                    {item.includeItems.map((line) => (
+                      <li key={line}>{line}</li>
+                    ))}
+                  </ul>
 
-              <h4>Süreç Nasıl İlerler?</h4>
-              <ol>
-                {item.processItems.map((line) => (
-                  <li key={line}>{line}</li>
-                ))}
-              </ol>
+                  <h4>Süreç Nasıl İlerler?</h4>
+                  <ol>
+                    {item.processItems.map((line) => (
+                      <li key={line}>{line}</li>
+                    ))}
+                  </ol>
 
-              <h4>SEO ve Ticari Kazanım</h4>
-              <p className="service-detail-seo">{item.seoGain}</p>
+                  <h4>SEO ve Ticari Kazanım</h4>
+                  <p className="service-detail-seo">{item.seoGain}</p>
 
-              <a href="#pricing" className="service-detail-cta">
-                Bu hizmet için fiyatlandırmayı gör
-              </a>
-            </motion.article>
-          ))}
+                  <a href="#pricing" className="service-detail-cta">
+                    Bu hizmet için fiyatlandırmayı gör
+                  </a>
+                </motion.article>
+              ))}
+            </div>
+          </div>
+
+          <button className="service-details-carousel-btn next-btn" onClick={nextSlide} aria-label="Sonraki">
+            ›
+          </button>
         </div>
       </div>
     </section>
