@@ -90,14 +90,16 @@ function App() {
 
   // Services carousel state
   const [servicesSlide, setServicesSlide] = useState(0);
-  const servicesMaxSlide = servicesOriginal.length - 3;
+  const getServicesMaxSlide = () => servicesOriginal.length - 3;
 
   const nextServicesSlide = () => {
-    setServicesSlide(prev => (prev >= servicesMaxSlide ? 0 : prev + 1));
+    const maxSlide = getServicesMaxSlide();
+    setServicesSlide(prev => (prev >= maxSlide ? 0 : prev + 1));
   };
 
   const prevServicesSlide = () => {
-    setServicesSlide(prev => (prev <= 0 ? servicesMaxSlide : prev - 1));
+    const maxSlide = getServicesMaxSlide();
+    setServicesSlide(prev => (prev <= 0 ? maxSlide : prev - 1));
   };
 
   const servicesOriginal = [
