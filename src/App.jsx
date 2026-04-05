@@ -59,15 +59,18 @@ function App() {
 
   // Mobil tespiti (performans ve layout ayarları için)
   const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   useEffect(() => {
     const mqMobile = window.matchMedia('(max-width: 640px)');
+    const mqTablet = window.matchMedia('(max-width: 1100px)');
     const mqReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
 
     const sync = () => {
       const nextIsMobile = mqMobile.matches;
       setIsMobile(nextIsMobile);
+      setIsTablet(mqTablet.matches);
       setPrefersReducedMotion(mqReduced.matches);
 
       if (!nextIsMobile) {
@@ -78,19 +81,22 @@ function App() {
     sync();
 
     mqMobile.addEventListener?.('change', sync);
+    mqTablet.addEventListener?.('change', sync);
     mqReduced.addEventListener?.('change', sync);
 
     return () => {
       mqMobile.removeEventListener?.('change', sync);
+      mqTablet.removeEventListener?.('change', sync);
       mqReduced.removeEventListener?.('change', sync);
     };
   }, []);
 
-  const slidesPerView = isMobile ? 1 : 3;
+  const servicesSlidesToShow = isMobile ? 1 : isTablet ? 2 : 4;
+  const servicesCarouselGap = 28;
 
   // Services carousel state
   const [servicesSlide, setServicesSlide] = useState(0);
-  const getServicesMaxSlide = () => servicesOriginal.length - 3;
+  const getServicesMaxSlide = () => Math.max(servicesOriginal.length - servicesSlidesToShow, 0);
 
   const nextServicesSlide = () => {
     const maxSlide = getServicesMaxSlide();
@@ -148,6 +154,12 @@ function App() {
   ];
 
   const services = [...servicesOriginal, ...servicesOriginal, ...servicesOriginal];
+
+  useEffect(() => {
+    const maxSlide = Math.max(servicesOriginal.length - servicesSlidesToShow, 0);
+    setServicesSlide((prev) => (prev > maxSlide ? maxSlide : prev));
+  }, [servicesSlidesToShow]);
+
   const philosophyData = [
     { title: "Biz Ne Değiliz?", desc: "Gösterip geçmeyiz, etki bırakmıyorsa yapmayız." },
     { title: "Peki Neyiz?", desc: "Görünene değil, görünmeyene müdahale ederiz." },
@@ -392,10 +404,14 @@ function App() {
             <div className="services-carousel-track">
               <div 
                 className="services-carousel-content" 
-                style={{ transform: `translateX(-${servicesSlide * (100 / 3)}%)` }}
+                style={{ transform: `translateX(-${servicesSlide * (100 / servicesSlidesToShow)}%)` }}
               >
                 {servicesOriginal.map((service, index) => (
-                  <div key={service.id} className="service-card">
+                  <div
+                    key={service.id}
+                    className="service-card"
+                    style={{ minWidth: `calc((100% - ${(servicesSlidesToShow - 1) * servicesCarouselGap}px) / ${servicesSlidesToShow})` }}
+                  >
                     <div className="card-number-bg">{String(index + 1).padStart(2, '0')}</div>
                     <div className="card-top">
                       <div className="card-icon">

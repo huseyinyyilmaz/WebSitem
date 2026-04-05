@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const serviceDetails = [
   {
@@ -175,10 +175,28 @@ const serviceDetails = [
   }
 ];
 
+const getSlidesToShowByViewport = () => {
+  if (typeof window === 'undefined') return 4;
+  if (window.innerWidth <= 640) return 1;
+  if (window.innerWidth <= 1100) return 2;
+  return 4;
+};
+
 export default function ServiceDetails() {
+  const [slidesToShow, setSlidesToShow] = useState(getSlidesToShowByViewport);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slidesToShow = 3;
-  const maxSlide = serviceDetails.length - slidesToShow;
+  const detailsCarouselGap = 24;
+  const maxSlide = Math.max(serviceDetails.length - slidesToShow, 0);
+
+  useEffect(() => {
+    const handleResize = () => setSlidesToShow(getSlidesToShowByViewport());
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    setCurrentSlide((prev) => (prev > maxSlide ? maxSlide : prev));
+  }, [maxSlide]);
 
   const nextSlide = () => {
     setCurrentSlide(prev => (prev >= maxSlide ? 0 : prev + 1));
@@ -246,6 +264,7 @@ export default function ServiceDetails() {
                   key={item.id}
                   id={`service-${item.id}`}
                   className="service-detail-card reveal"
+                  style={{ minWidth: `calc((100% - ${(slidesToShow - 1) * detailsCarouselGap}px) / ${slidesToShow})` }}
                   initial={{ opacity: 0, y: 25 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
