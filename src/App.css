@@ -365,15 +365,15 @@ body { background-color: var(--bg-body); color: var(--text-white); font-family: 
   background: linear-gradient(145deg, rgba(20, 20, 25, 0.95) 0%, rgba(25, 25, 30, 0.9) 100%);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.08); 
-  padding: 45px 35px; 
-  border-radius: 20px; 
+  padding: 28px 22px; 
+  border-radius: 16px; 
   position: relative; 
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   overflow: hidden; 
   display: flex; 
   flex-direction: column; 
   height: 100%; 
-  min-height: 420px;
+  min-height: 360px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
 
@@ -422,7 +422,7 @@ body { background-color: var(--bg-body); color: var(--text-white); font-family: 
   position: absolute; 
   top: -10px; 
   right: 15px; 
-  font-size: 7rem; 
+  font-size: 5.5rem; 
   font-weight: 900; 
   color: transparent; 
   -webkit-text-stroke: 1.5px rgba(251, 191, 36, 0.08);
@@ -437,14 +437,14 @@ body { background-color: var(--bg-body); color: var(--text-white); font-family: 
 }
 
 .card-top { 
-  margin-bottom: 25px; 
+  margin-bottom: 18px; 
   position: relative; 
   z-index: 2;
 }
 
 .card-icon { 
-  width: 60px; 
-  height: 60px; 
+  width: 50px; 
+  height: 50px; 
   background: linear-gradient(135deg, rgba(251, 191, 36, 0.15) 0%, rgba(251, 191, 36, 0.05) 100%);
   color: var(--primary); 
   border-radius: 14px; 
@@ -472,10 +472,10 @@ body { background-color: var(--bg-body); color: var(--text-white); font-family: 
 }
 
 .service-card h3 { 
-  font-size: 1.5rem; 
+  font-size: 1.25rem; 
   font-weight: 700; 
   color: var(--text-white); 
-  margin-bottom: 18px; 
+  margin-bottom: 14px; 
   position: relative; 
   z-index: 2;
   line-height: 1.3;
@@ -483,10 +483,10 @@ body { background-color: var(--bg-body); color: var(--text-white); font-family: 
 }
 
 .service-card p { 
-  font-size: 0.95rem; 
+  font-size: 0.88rem; 
   color: #aaa; 
-  line-height: 1.8; 
-  margin-bottom: 30px; 
+  line-height: 1.7; 
+  margin-bottom: 20px; 
   position: relative; 
   z-index: 2; 
   flex-grow: 1;
@@ -1241,8 +1241,8 @@ body { background-color: var(--bg-body); color: var(--text-white); font-family: 
   background: linear-gradient(135deg, rgba(20, 20, 25, 0.9) 0%, rgba(25, 25, 30, 0.8) 100%);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.08); 
-  border-radius: 18px; 
-  padding: 28px 24px; 
+  border-radius: 14px; 
+  padding: 20px 18px; 
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   position: relative;
   overflow: hidden;
@@ -1271,9 +1271,9 @@ body { background-color: var(--bg-body); color: var(--text-white); font-family: 
 }
 
 .service-detail-card h3 { 
-  font-size: 1.35rem; 
+  font-size: 1.15rem; 
   line-height: 1.3; 
-  margin-bottom: 14px; 
+  margin-bottom: 12px; 
   color: var(--text-white);
   font-weight: 700;
   position: relative;
@@ -1283,9 +1283,9 @@ body { background-color: var(--bg-body); color: var(--text-white); font-family: 
 
 .service-detail-summary { 
   color: #999; 
-  line-height: 1.7; 
-  margin-bottom: 22px;
-  font-size: 0.9rem;
+  line-height: 1.6; 
+  margin-bottom: 18px;
+  font-size: 0.84rem;
   border-left: 3px solid rgba(251, 191, 36, 0.3);
   padding-left: 16px;
   background: rgba(251, 191, 36, 0.03);
@@ -1296,13 +1296,13 @@ body { background-color: var(--bg-body); color: var(--text-white); font-family: 
 
 .service-detail-card h4 { 
   color: var(--primary); 
-  font-size: 1.05rem; 
-  margin: 32px 0 16px; 
+  font-size: 0.95rem; 
+  margin: 24px 0 12px; 
   font-weight: 700; 
   letter-spacing: 0.3px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .service-detail-card h4::before {
@@ -1316,17 +1316,17 @@ body { background-color: var(--bg-body); color: var(--text-white); font-family: 
   margin: 0; 
   padding-left: 0; 
   display: grid; 
-  gap: 12px;
+  gap: 10px;
   list-style: none;
 }
 
 .service-detail-card ul li,
 .service-detail-card ol li { 
   color: #bbb; 
-  line-height: 1.7;
-  padding-left: 32px;
+  line-height: 1.6;
+  padding-left: 28px;
   position: relative;
-  font-size: 0.95rem;
+  font-size: 0.86rem;
   overflow-wrap: anywhere;
 }
 
