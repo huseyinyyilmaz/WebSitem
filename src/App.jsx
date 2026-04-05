@@ -368,18 +368,27 @@ function App() {
             <h2>Hizmetlerimiz</h2>
             <p>Dijital dünyada iz bırakmak isteyen markalar için stratejik çözümler üretiyoruz.</p>
           </div>
-          <div className="slider-container reveal" onMouseDown={onDragStart} onMouseMove={onDragMove} onMouseUp={onDragEnd} onMouseLeave={onDragEnd} onTouchStart={onDragStart} onTouchMove={onDragMove} onTouchEnd={onDragEnd}>
-            <button className="slider-btn prev-btn" onClick={prevSlide}>‹</button>
-            <div className="services-wrapper-window">
-              <div className="services-slider-track" onTransitionEnd={handleTransitionEnd} style={{ transform: `translateX(calc(-${currentIndex * (100 / slidesPerView)}% + ${dragOffset}px))`, transition: transitionEnabled ? 'transform 1s cubic-bezier(0.25, 1, 0.5, 1)' : 'none', cursor: isDragging ? 'grabbing' : 'grab' }}>
-                 {services.map((service, index) => (
-                    <div key={`${service.id}-${index}`} className="service-slide">
-                      <div className="service-card"><div className="card-number-bg">{service.id}</div><div className="card-top"><div className="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">{service.icon}</svg></div></div><h3>{service.title}</h3><p>{service.desc}</p><div className="card-footer"><span className="detail-link">Detaylı Bilgi</span><div className="detail-circle">→</div></div></div>
-                    </div>
-                 ))}
+          
+          {/* Grid Layout - Tüm Hizmetleri Göster */}
+          <div className="services-grid-all reveal">
+            {servicesOriginal.map((service, index) => (
+              <div key={service.id} className="service-card">
+                <div className="card-number-bg">{String(index + 1).padStart(2, '0')}</div>
+                <div className="card-top">
+                  <div className="card-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      {service.icon}
+                    </svg>
+                  </div>
+                </div>
+                <h3>{service.title}</h3>
+                <p>{service.desc}</p>
+                <a href="#service-details" className="card-footer">
+                  <span className="detail-link">Detaylı Bilgi</span>
+                  <div className="detail-circle">→</div>
+                </a>
               </div>
-            </div>
-            <button className="slider-btn next-btn" onClick={nextSlide}>›</button>
+            ))}
           </div>
         </section>
 

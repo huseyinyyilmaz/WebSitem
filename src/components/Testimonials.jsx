@@ -114,51 +114,92 @@ export default function Testimonials() {
             </svg>
           </button>
 
-          <div className="testimonials-track">
-            {testimonials.map((testimonial, index) => {
-              const isActive = index === currentIndex;
-              const isPrev = index === (currentIndex - 1 + testimonials.length) % testimonials.length;
-              const isNext = index === (currentIndex + 1) % testimonials.length;
-              
-              let className = 'testimonial-card';
-              if (isActive) className += ' active';
-              else if (isPrev) className += ' prev';
-              else if (isNext) className += ' next';
-              else className += ' hidden';
-
+          <div className="testimonials-track testimonials-3col">
+            {/* Sol sidebar */}
+            {(() => {
+              const prevIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+              const prev = testimonials[prevIndex];
               return (
                 <motion.div
-                  key={testimonial.id}
-                  className={className}
+                  key={`prev-${prev.id}`}
+                  className="testimonial-card sidebar-left"
+                  onClick={() => setCurrentIndex(prevIndex)}
                   initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ 
-                    opacity: isActive ? 1 : 0.3,
-                    scale: isActive ? 1 : 0.85,
-                  }}
+                  animate={{ opacity: 0.6, scale: 0.9 }}
                   transition={{ duration: 0.5 }}
                 >
                   <div className="quote-icon">"</div>
-                  <div className="testimonial-rating">
-                    {renderStars(testimonial.rating)}
+                  <div className="testimonial-rating">{renderStars(prev.rating)}</div>
+                  <p className="testimonial-text">{prev.text.length > 100 ? prev.text.substring(0, 100) + '...' : prev.text}</p>
+                  <div className="testimonial-author-mini">
+                    <img src={prev.image} alt={prev.name} />
+                    <div>
+                      <h5>{prev.name}</h5>
+                      <span>{prev.role}</span>
+                    </div>
                   </div>
-                  <p className="testimonial-text">{testimonial.text}</p>
+                </motion.div>
+              );
+            })()}
+
+            {/* Ortada büyük */}
+            {(() => {
+              const active = testimonials[currentIndex];
+              return (
+                <motion.div
+                  key={`active-${active.id}`}
+                  className="testimonial-card active"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <div className="quote-icon">"</div>
+                  <div className="testimonial-rating">{renderStars(active.rating)}</div>
+                  <p className="testimonial-text">{active.text}</p>
                   <div className="testimonial-project">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
                       <polyline points="22 4 12 14.01 9 11.01"/>
                     </svg>
-                    {testimonial.project}
+                    {active.project}
                   </div>
                   <div className="testimonial-author">
-                    <img src={testimonial.image} alt={testimonial.name} />
+                    <img src={active.image} alt={active.name} />
                     <div>
-                      <h4>{testimonial.name}</h4>
-                      <p>{testimonial.role}</p>
+                      <h4>{active.name}</h4>
+                      <p>{active.role}</p>
                     </div>
                   </div>
                 </motion.div>
               );
-            })}
+            })()}
+
+            {/* Sağ sidebar */}
+            {(() => {
+              const nextIndex = (currentIndex + 1) % testimonials.length;
+              const next = testimonials[nextIndex];
+              return (
+                <motion.div
+                  key={`next-${next.id}`}
+                  className="testimonial-card sidebar-right"
+                  onClick={() => setCurrentIndex(nextIndex)}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 0.6, scale: 0.9 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <div className="quote-icon">"</div>
+                  <div className="testimonial-rating">{renderStars(next.rating)}</div>
+                  <p className="testimonial-text">{next.text.length > 100 ? next.text.substring(0, 100) + '...' : next.text}</p>
+                  <div className="testimonial-author-mini">
+                    <img src={next.image} alt={next.name} />
+                    <div>
+                      <h5>{next.name}</h5>
+                      <span>{next.role}</span>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })()}
           </div>
 
           <button className="testimonial-nav-btn next" onClick={nextSlide} aria-label="Sonraki">
